@@ -18,6 +18,7 @@ export default function MyApp({ Component, pageprops }) {
             </Head>
             <Component {...pageprops} />
             <Script src="/app.js" />
+
         </>
     );
 }

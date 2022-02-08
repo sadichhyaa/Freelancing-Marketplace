@@ -488,13 +488,18 @@ footer {
     border-radius: 4px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    width: 80%;
+    border: 2px solid #FFD3B2;
 }
 
 .profile-main {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+
+
 }
 
 .talent-image {
@@ -504,4 +509,96 @@ footer {
     border-color: var(--orange-ball);
     border-radius: 4px;
     background-color: var(--white);
+}
+
+.talent-image {
+    width: 250px;
+    height: 250px;
+    border: 2px solid #FFD3B2;
+    border-radius: 4px;
+}
+
+.talent-projects {
+    border: 2px solid #FFD3B2;
+    border-radius: 4px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.profile-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile-buttons .btn {
+    background-color: var(--orange-ball);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-col1 .row p,
+.profile-col2 .row p {
+
+    margin-bottom: 0;
+}
+
+.name-p,
+.price-p {
+    font-Size: 24px;
+    font-Weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.talent-description p,
+.talent-status .col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-star {
+    color: #FDCC0D;
+}
+
+.fa-circle {
+    color: green;
+}
+
+.preview-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+}
+
+.hire-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+}
+
+.hire-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hire-form {
+    width: 100%;
 }

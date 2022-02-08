@@ -12,7 +12,7 @@ api.interceptors.request.use((config) => {
     const token = Cookies.get("auth_token");
     if (token) {
         config.headers = {
-            Authorization: Bearer`${token}`
+            Authorization: `Bearer ${token}`
         }
     }
     return config;
@@ -21,3 +21,5 @@ api.interceptors.request.use((config) => {
         return Promise.reject(error);
     }
 );
+
+export default api;
