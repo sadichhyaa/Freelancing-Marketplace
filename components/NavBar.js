@@ -1,6 +1,18 @@
 import Link from "next/link";
+import api from "../services/api";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
+    const [profile, setProfile] = useState(null);
+
+    useEffect(() => {
+        api.get('/profile/me').then(({ data }) => {
+            if (data.profile) {
+                setProfile(data.profile);
+            }
+        });
+    }, []);
+
     return (<>
         <nav id="navbar_top" className="navbar navbar-expand-lg navbar-light px-5">
             <div className="container-fluid">
@@ -48,12 +60,17 @@ const NavBar = () => {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <Link href="/sign-up">
-                                <a type="button"
-                                    className="d-flex justify-content-center align-items-center get-started-btn app-btn"
-                                    style={{ color: "white" }}>Get
-                                    Started</a>
-                            </Link>
+                            {profile ?
+                                <Link href={"/profile"}>
+                                    <a>{profile.fullName}</a>
+                                </Link> :
+                                <Link href="/sign-up">
+                                    <a type="button"
+                                        className="d-flex justify-content-center align-items-center get-started-btn app-btn"
+                                        style={{ color: "white" }}>Get
+                                        Started</a>
+                                </Link>}
+
                         </li>
 
                     </ul>

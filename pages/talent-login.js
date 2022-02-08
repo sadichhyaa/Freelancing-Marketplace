@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 const { yupResolver } = require("@hookform/resolvers/yup");
 
@@ -18,6 +19,8 @@ const TalentLogIn = () => {
             .required("Password is required")
             .min(6, "Password must be at least 6 characters")
     });
+
+    const router = useRouter();
 
     const { register, formState: { errors }, handleSubmit, setError } = useForm({ resolver: yupResolver(schema) });
     const [isLoading, setIsLoading] = useState(false);
@@ -42,6 +45,7 @@ const TalentLogIn = () => {
                 console.log(err.response?.data);
             }).finally(() => {
                 setIsLoading(false);
+                router.push('/')
             })
 
     };

@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import api from "../services/api";
 import Link from "next/link";
-import axios from "axios";
 
 const Profile = () => {
     const [profile, setProfile] = useState(null)
@@ -13,17 +12,21 @@ const Profile = () => {
     useEffect(() => {
         api.get('/profile/me').then(({ data }) => {
             console.log(data);
-            setProfile(data.profile);
+            if (data.profile) {
+                setProfile(data.profile);
+            } else {
+                router.push('/profile-form');
+            }
         });
     }, []);
 
     const router = useRouter();
 
     const onClickHandler = () => {
-        axios.delete(`/talent/profile/${profile._id}`)
+        api.delete(`/talent/profile/${profile._id}`)
             .then((res) => {
-                console.log(res.data);
-            }).catch((err) => err.response && alert(err.response?.data.error))
+                alert(res.data.message);
+            }).catch((err) => err.response?.data && alert(err.response?.data.error))
             .finally(() => {
                 router.push('/');
             });
@@ -38,7 +41,7 @@ const Profile = () => {
                     <div className=" row main-card shadow p-0">
                         <div className="col p-0" style={{ borderRight: "2px solid #FFD3B2" }}>
                             <div className="profile-col1 col">
-                                <div className="row talent-image mx-auto m-4"><img src={profile.profilePicture ?? './images/user-placeholder.jpg'}></img></div>
+                                <div className="row talent-image mx-auto m-4"><img style={{ width: "100%", height: "100%" }} src={profile.profilePicture ?? './images/user-placeholder.jpg'}></img></div>
                                 <div className="row talent-name mb-3 p-2 mx-0" style={{ borderBottom: " 2px solid #FFD3B2" }}><p className="name-p">{profile.fullName}</p></div>
                                 <div className="row talent-price mb-3 p-2"><p className="price-p">{profile.price}</p></div>
                                 <div className="row talent-projects mb-3 p-2 ps-3">

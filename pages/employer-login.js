@@ -44,6 +44,7 @@ const EmployerLogIn = () => {
                 console.log(err.response?.data);
             }).finally(() => {
                 setIsLoading(false);
+                router.push('/')
             })
 
     };

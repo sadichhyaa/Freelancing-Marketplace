@@ -532,7 +532,8 @@ footer {
 }
 
 
-.profile-buttons .btn {
+.profile-buttons .btn,
+.hire-btn {
     background-color: var(--orange-ball);
     color: var(--white);
     display: flex;
@@ -586,14 +587,16 @@ footer {
 }
 
 .hire-container {
-    width: 60%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--white);
 }
 
-.hire-main {
+.hire-main,
+.hire-btn-div,
+.hire-form label {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -601,4 +604,8 @@ footer {
 
 .hire-form {
     width: 100%;
+}
+
+.hire-main {
+    margin-top: 20px;
 }
