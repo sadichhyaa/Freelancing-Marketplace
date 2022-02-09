@@ -1,4 +1,6 @@
-const Records = () => {
+import React from 'react';
+
+const Records = (record) => {
     return (
         <>
             <div className="records-main">
@@ -7,16 +9,14 @@ const Records = () => {
                         <img src="./images/banner2.jpg" />
                     </div>
                     <div className="record-info mx-3">
-                        <div><p>Sadichhya Maharjan</p></div>
-                        <div><p>i'm cool. i like movies. i like songs</p></div>
+                        <div className="talent-name p-2"><p>{record.fullName}</p></div>
+                        <div className="talent-description p-2"><p>i'm cool. i like movies. i like songs</p></div>
                     </div>
-                    <div className="records-price">
+                    <div className="records-price p-2 m-3">
                         <div className="price">
-                            <h2>Rs 300</h2>
+                            <h2>Rs 200</h2>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </>

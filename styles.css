@@ -550,7 +550,8 @@ footer {
 }
 
 .profile-col1 .row p,
-.profile-col2 .row p {
+.profile-col2 .row p,
+.record-box p {
 
     margin-bottom: 0;
 }
@@ -658,4 +659,21 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.records-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 4px;
+}
+
+.talent-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.no-record {
+    width: 80%;
 }

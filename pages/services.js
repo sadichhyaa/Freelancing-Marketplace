@@ -1,8 +1,12 @@
+import Link from "next/link";
+import { useState } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+// import api from "../services/api";
 
 const Services = () => {
     return (
+
         <>
             <NavBar />
             <main>
@@ -27,8 +31,10 @@ const Services = () => {
                                 <div className="d-flex">
                                     <a className="border rounded-pill m-3 px-3 py-2">Plumber
                                     </a>
-                                    <a className="border rounded-pill m-3 px-3 py-2">Maid
-                                    </a>
+                                    <Link href="/talentRecords?servicesOffered='Maid'">
+                                        <a className="border rounded-pill m-3 px-3 py-2">Maid
+                                        </a>
+                                    </Link>
                                     <a className="border rounded-pill m-3 px-3 py-2">Electrician
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2">Carpenter
@@ -56,8 +62,10 @@ const Services = () => {
                                     IT
                                 </h1>
                                 <div className="d-flex flex-wrap">
-                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Developer
-                                    </a>
+                                    <Link href="/talentRecords?servicesOffered='Web Developer'">
+                                        <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Developer
+                                        </a>
+                                    </Link>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Graphics Designer
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">App Developer
