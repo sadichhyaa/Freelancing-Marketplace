@@ -1,7 +1,27 @@
+import Router from "next/router";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import api from "../services/api";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const TalentProfile = () => {
+    const router = useRouter();
+
+    const onClickHandler = () => {
+        api.get(`/employer/talent/profile/hire/${profile._id}`)
+            .then(({ data }) => {
+                alert(data.message);
+            }).catch((err) => err.response?.data && alert(err.response?.data.error))
+            .finally(() => {
+                router.push('/hireForm');
+            });
+    };
+
+    useEffect(() => {
+        api.get()
+    }, [])
+
     return (
         <>
             <NavBar />
@@ -51,7 +71,7 @@ const TalentProfile = () => {
 
                             <div className="col profile-button">
                                 <Link href="./hireForm">
-                                    <a className=" btn hire-btn px-5">Hire</a>
+                                    <a onClick={onClickHandler} className=" btn hire-btn px-5">Hire</a>
                                 </Link>
 
                             </div>

@@ -1,38 +1,99 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import * as yup from "yup";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import api from "../services/api";
+
+const { yupResolver } = require("@hookform/resolvers/yup");
 
 const HireForm = () => {
+    let schema = yup.object().shape({
+        name: yup
+            .string()
+            .required("Your name is required")
+            .min(3, "Name should be minimum 3 characters")
+            .max(30, "You are not allowed to enter more than 30 characters"),
+        mobileNumber: yup
+            .string()
+            .required("Mobile number must be provided")
+            .length(10, "Must be 10 characters"),
+        address: yup
+            .string()
+            .required("Please provide your address"),
+        hireDuration: yup
+            .string()
+            .required("Please mention hire duration"),
+        message: yup
+            .string()
+            .required("Please enter some message")
+    })
+
+    const [isLoading, setIsLoading] = useState(false);
+    const { register, formState: { errors }, handleSubmit, setError } = useForm({ resolver: yupResolver(schema) });
+    const [profile, setProfile] = useState(null)
+
+
+    const router = useRouter();
+
+    const onSubmit = (data) => {
+        console.log(data);
+        setIsLoading(true);
+
+        // api.post('/employer/talent/profile/hire/:id')
+    }
+
+    useEffect(() => {
+        api.get('/profile/me').then(({ data }) => {
+            console.log(data);
+            console.log(data.profile);
+        })
+    }, [])
+
     return (
         <>
             <NavBar />
             <div className="hire-main mt-5">
                 <div className="hire-container p-5 shadow">
-                    <form className="hire-form">
+                    <form className="hire-form" onSubmit={handleSubmit(onSubmit)} noValidate>
                         <div className="input-group mb-4">
-                            <label className="form-label me-3 mb-0">Full Name</label>
-                            <input type="text" className="form-control ms-3" placeholder="FullName" aria-label="FullName" aria-describedby="basic-addon1" />
+                            <label class="form-label me-3 mb-0">Full Name</label>
+                            <input type="text" class="form-control ms-3" placeholder="FullName" aria-label="FullName"
+                                aria-describedby="basic-addon1" required {...register("name")} />
                         </div>
+                        {errors.name && <div className="error-message">{errors.name.message}</div>}
 
-                        <div className="input-group mb-4">
-                            <label className="form-label me-3 mb-0">Mobile Number</label>
-                            <input type="text" className="form-control ms-3" placeholder="Mobile Number" aria-label="Mobile Number" aria-describedby="basic-addon2" />
+                        <div class="input-group mb-4">
+                            <label class="form-label me-3 mb-0">Mobile Number</label>
+                            <input type="text" class="form-control ms-3" placeholder="Mobile Number" aria-label="Mobile Number"
+                                aria-describedby="basic-addon2" required {...register("mobileNumber")} />
                         </div>
+                        {errors.mobileNumber && <div className="error-message">{errors.mobileNumber.message}</div>}
 
+                        <div class="input-group mb-4">
+                            <label class="form-label me-3 mb-0">Address</label>
+                            <input type="text" class="form-control ms-3" placeholder="Address" aria-describedby="basic-addon3"
+                                required {...register("address")} />
+                        </div>
+                        {errors.address && <div className="error-message">{errors.address.message}</div>}
 
-                        <div className="input-group mb-4">
-                            <label className="form-label me-3 mb-0">Address</label>
-                            <input type="text" className="form-control ms-3" placeholder="Address" aria-describedby="basic-addon3" />
+                        <div class="input-group mb-4">
+                            <label class="form-label me-3 mb-0">Hire Duration</label>
+                            <input type="text" class="form-control ms-3" placeholder="Hire Duration" aria-describedby="basic-addon4"
+                                required {...register("hireDuration")} />
                         </div>
-                        <div className="input-group mb-4">
-                            <label className="form-label me-3 mb-0">Hire Duration</label>
-                            <input type="text" className="form-control ms-3" placeholder="Hire Duration" aria-describedby="basic-addon4" />
-                        </div>
-                        <div className="input-group mb-4">
+                        {errors.hireDuration && <div className="error-message">{errors.hireDuration.message}</div>}
+
+                        <div class="input-group mb-4">
                             <label className="form-label me-3 mb-0">Message</label>
-                            <input type="text" className="form-control ms-3" placeholder="Message" aria-describedby="basic-addon5" />
+                            <input type="text" class="form-control ms-3" placeholder="Message" aria-describedby="basic-addon5"
+                                required {...register("message")} />
                         </div>
+                        {errors.message && <div className="error-message">{errors.message.message}</div>}
+
                         <div className="hire-btn-div">
-                            <button className="btn hire-btn">Confirm</button>
+                            <button className="btn hire-btn" disabled={isLoading}>Confirm</button>
                         </div>
                     </form>
 

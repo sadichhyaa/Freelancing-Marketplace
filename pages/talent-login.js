@@ -45,7 +45,7 @@ const TalentLogIn = () => {
                 console.log(err.response?.data);
             }).finally(() => {
                 setIsLoading(false);
-                router.push('/')
+                router.push('/talent-login')
             })
 
     };

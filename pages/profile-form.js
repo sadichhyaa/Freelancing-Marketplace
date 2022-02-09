@@ -80,7 +80,11 @@ const ProfileForm = () => {
                     console.log(data);
 
                 })
-                .catch((err) => alert(err.response?.data.error))
+                .catch((err) => {
+                    // alert(err.response?.data.error)
+                    alert('You are not allowed to submit this form');
+                    router.push('/')
+                })
                 .finally(() => {
                     setIsLoading(false);
                     router.push('/profile');
@@ -186,6 +190,34 @@ const ProfileForm = () => {
                                     <option value="Plumber">Plumber</option>
                                     <option value="Health">Health</option>
                                     <option value="Web Developer">Web Developer</option>
+                                    <option value="Maid">Maid</option>
+                                    <option value="Carpenter">Carpenter</option>
+                                    <option value="Pest Control">Pest Control</option>
+                                    <option value="Movers">Movers</option>
+                                    <option value="Cook">Cook</option>
+                                    <option value="Gardener">Gardener</option>
+                                    <option value="Baby Sitter">Baby Sitter</option>
+                                    <option value="Laundry">Laundry</option>
+                                    <option value="Graphic Designer">Graphic Designer</option>
+                                    <option value="App Developer">App Developer</option>
+                                    <option value="Networking">Networking</option>
+                                    <option value="Web Hosting">Web Hosting</option>
+                                    <option value="Data Analyst">Data Analyst</option>
+                                    <option value="UI/UX Designer">UI/UX Designer</option>
+                                    <option value="Ethical Hacking">Ethical Hacking</option>
+                                    <option value="Doctor">Doctor</option>
+                                    <option value="Therapist">Therapist</option>
+                                    <option value="Old Age Care">Old Age Care</option>
+                                    <option value="Nurse">Nurse</option>
+                                    <option value="Veterinarian">Veterinarian</option>
+                                    <option value="Beautician">Beautician</option>
+                                    <option value="Home Tutor">Home Tutor</option>
+                                    <option value="Artist">Artist</option>
+                                    <option value="Tailor">Tailor</option>
+                                    <option value="Language Translator">Language Translator</option>
+                                    <option value="Event Manager">Event Manager</option>
+                                    <option value="Security Guard">Security Guard</option>
+                                    <option value="Driver">Driver</option>
                                 </select>
                             </div>
                             {errors.servicesOffered && <div className="error-message">{errors.servicesOffered.message}</div>}
