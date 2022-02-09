@@ -26,18 +26,18 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        <li className="nav-item pages-link">
                             <Link href="/">
                                 <a className="nav-link active" aria-current="page" >Home</a>
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item pages-link">
                             <Link href="/services">
                                 <a className="nav-link" >Services</a>
                             </Link>
 
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item pages-link">
                             <a className="nav-link" href="#">About</a>
                         </li>
                         <li className="nav-item dropdown me-5 ">
@@ -66,11 +66,17 @@ const NavBar = () => {
                                 </Link> :
                                 <Link href="/sign-up">
                                     <a type="button"
+<<<<<<< HEAD
                                         className="d-flex justify-content-center align-items-center get-started-btn app-btn"
                                         style={{ color: "white" }}>Get
                                         Started</a>
                                 </Link>
                             }
+=======
+                                        className="d-flex justify-content-center align-items-center get-started-btn"
+                                    >Get Started</a>
+                                </Link>}
+>>>>>>> 79a663dba24725c4b7ea24a1fd4dcbb85e91118e
 
                         </li>
 
