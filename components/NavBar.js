@@ -66,17 +66,11 @@ const NavBar = () => {
                                 </Link> :
                                 <Link href="/sign-up">
                                     <a type="button"
-<<<<<<< HEAD
                                         className="d-flex justify-content-center align-items-center get-started-btn app-btn"
                                         style={{ color: "white" }}>Get
                                         Started</a>
                                 </Link>
                             }
-=======
-                                        className="d-flex justify-content-center align-items-center get-started-btn"
-                                    >Get Started</a>
-                                </Link>}
->>>>>>> 79a663dba24725c4b7ea24a1fd4dcbb85e91118e
 
                         </li>
 
