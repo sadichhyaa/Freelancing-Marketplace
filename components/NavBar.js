@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
 const NavBar = () => {
     const [profile, setProfile] = useState(null);
 
-    useEffect(() => {
-        api.get('/profile/me').then(({ data }) => {
-            if (data.profile) {
-                setProfile(data.profile);
-            }
-        });
-    }, []);
+    // useEffect(() => {
+    //     api.get('/profile/me').then(({ data }) => {
+    //         if (data.profile) {
+    //             setProfile(data.profile);
+    //         }
+    //     });
+    // }, []);
 
     return (<>
         <nav id="navbar_top" className="navbar navbar-expand-lg navbar-light px-5">
@@ -69,7 +69,8 @@ const NavBar = () => {
                                         className="d-flex justify-content-center align-items-center get-started-btn app-btn"
                                         style={{ color: "white" }}>Get
                                         Started</a>
-                                </Link>}
+                                </Link>
+                            }
 
                         </li>
 
