@@ -81,9 +81,10 @@ header {
     font-size: 16px;
 }
 
-.navbar ul li a {
+.pages-link {
     text-decoration: none;
     color: var(--upama-black);
+
 }
 
 .navbar ul li:nth-child(1),
@@ -108,7 +109,7 @@ header {
 /* .box-style{
   width:10%;
 } */
-.app-btn {
+.get-started-btn {
     height: 38px;
     padding: 10px 13px;
     border-radius: 4px;
@@ -117,17 +118,16 @@ header {
     color: var(--white);
     border: none;
     font-weight: 600;
+    text-decoration: none;
 }
 
-.app-btn:hover {
+.get-started-btn:hover {
     background-color: transparent;
-    border: var(--orange-ball);
+    border: 2px solid var(--orange-ball);
     color: var(--orange-ball);
 }
 
-/* .app-btn:hover {
-  color: var(--upama-black);
-} */
+
 
 .content h1 {
     font-size: 64px;
@@ -606,6 +606,7 @@ footer {
     width: 100%;
 }
 
-.hire-main {
-    margin-top: 20px;
+.service-col a {
+    text-decoration: none;
+    color: black;
 }

@@ -25,26 +25,26 @@ const Services = () => {
                             <div className="shadow p-3 mb-5 service-content bg-white">
                                 <h1 className="service-category m-3">Home</h1>
                                 <div className="d-flex">
-                                    <div className="border rounded-pill m-3 px-3 py-2">Plumber
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Maid
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Electrician
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Carpenter
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Pest Control
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Movers
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Cook
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Gardener
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Baby Sitter
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2">Laundry
-                                    </div>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Plumber
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Maid
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Electrician
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Carpenter
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Pest Control
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Movers
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Cook
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Gardener
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Baby Sitter
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2">Laundry
+                                    </a>
 
                                 </div>
 
@@ -56,22 +56,22 @@ const Services = () => {
                                     IT
                                 </h1>
                                 <div className="d-flex flex-wrap">
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Developer
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Graphics Designer
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">App Developer
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Networking
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Hosting
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Data Analysist
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">UI/UX Designer
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Ethical Hacking
-                                    </div>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Developer
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Graphics Designer
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">App Developer
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Networking
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Hosting
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Data Analysist
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">UI/UX Designer
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Ethical Hacking
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -81,16 +81,16 @@ const Services = () => {
                                     Health
                                 </h1>
                                 <div className="d-flex">
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Doctor
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Therapits
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Old Age Care
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Nurse
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Veterarian
-                                    </div>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Doctor
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Therapits
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Old Age Care
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Nurse
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Veterarian
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -100,22 +100,22 @@ const Services = () => {
                                     Others
                                 </h1>
                                 <div className="d-flex flex-wrap">
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Beautician
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Home Tutor
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Artist
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Tailor
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">language Translator
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Event Manager
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Security Guard
-                                    </div>
-                                    <div className="border rounded-pill m-3 px-3 py-2 text-nowrap">Driver
-                                    </div>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Beautician
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Home Tutor
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Artist
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Tailor
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">language Translator
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Event Manager
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Security Guard
+                                    </a>
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Driver
+                                    </a>
                                 </div>
                             </div>
                         </div>

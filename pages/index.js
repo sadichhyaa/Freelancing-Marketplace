@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
@@ -156,7 +157,9 @@ const Home = () => {
           </div >
 
           <div style={{ textAlign: "center" }} className="see-more mt-5">
-            <a href="ourservices.html" className="btn see-more-btn">See More</a>
+            <Link href="/services">
+              <a className="btn see-more-btn">See More</a>
+            </Link>
           </div>
         </div >
 

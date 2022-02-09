@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
 const NavBar = () => {
     const [profile, setProfile] = useState(null);
 
-    useEffect(() => {
-        api.get('/profile/me').then(({ data }) => {
-            if (data.profile) {
-                setProfile(data.profile);
-            }
-        });
-    }, []);
+    // useEffect(() => {
+    //     api.get('/profile/me').then(({ data }) => {
+    //         if (data.profile) {
+    //             setProfile(data.profile);
+    //         }
+    //     });
+    // }, []);
 
     return (<>
         <nav id="navbar_top" className="navbar navbar-expand-lg navbar-light px-5">
@@ -26,18 +26,18 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
+                        <li className="nav-item pages-link">
                             <Link href="/">
                                 <a className="nav-link active" aria-current="page" >Home</a>
                             </Link>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item pages-link">
                             <Link href="/services">
                                 <a className="nav-link" >Services</a>
                             </Link>
 
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item pages-link">
                             <a className="nav-link" href="#">About</a>
                         </li>
                         <li className="nav-item dropdown me-5 ">
@@ -66,9 +66,8 @@ const NavBar = () => {
                                 </Link> :
                                 <Link href="/sign-up">
                                     <a type="button"
-                                        className="d-flex justify-content-center align-items-center get-started-btn app-btn"
-                                        style={{ color: "white" }}>Get
-                                        Started</a>
+                                        className="d-flex justify-content-center align-items-center get-started-btn"
+                                    >Get Started</a>
                                 </Link>}
 
                         </li>
