@@ -596,7 +596,9 @@ footer {
 
 .hire-main,
 .hire-btn-div,
-.hire-form label {
+.hire-form label,
+.records-main,
+.records-header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -609,4 +611,51 @@ footer {
 .service-col a {
     text-decoration: none;
     color: black;
+}
+
+.record-content-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.record-filter__control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+}
+
+.filter-box {
+    font-size: 12px;
+    padding: 6px;
+}
+
+.records-box {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.records-photo {
+    width: 150px;
+    height: 150px;
+}
+
+.records-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.price-p {
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

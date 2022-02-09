@@ -66,7 +66,7 @@ const Services = () => {
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Hosting
                                     </a>
-                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Data Analysist
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Data Analyst
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">UI/UX Designer
                                     </a>
@@ -83,13 +83,13 @@ const Services = () => {
                                 <div className="d-flex">
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Doctor
                                     </a>
-                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Therapits
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Therapist
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Old Age Care
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Nurse
                                     </a>
-                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Veterarian
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Veterinarian
                                     </a>
                                 </div>
                             </div>
@@ -108,9 +108,10 @@ const Services = () => {
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Tailor
                                     </a>
-                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">language Translator
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Language Translator
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Event Manager
+
                                     </a>
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Security Guard
                                     </a>
