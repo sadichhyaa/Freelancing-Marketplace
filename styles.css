@@ -641,11 +641,13 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    justify-content: center;
+    width: 70%;
 }
 
 .records-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
 }
 
 .records-photo img {

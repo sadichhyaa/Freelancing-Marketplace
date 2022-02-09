@@ -31,7 +31,7 @@ const Services = () => {
                                 <div className="d-flex">
                                     <a className="border rounded-pill m-3 px-3 py-2">Plumber
                                     </a>
-                                    <Link href="/talentRecords?servicesOffered='Maid'">
+                                    <Link href="/talentRecords?servicesOffered=Maid">
                                         <a className="border rounded-pill m-3 px-3 py-2">Maid
                                         </a>
                                     </Link>
@@ -62,7 +62,7 @@ const Services = () => {
                                     IT
                                 </h1>
                                 <div className="d-flex flex-wrap">
-                                    <Link href="/talentRecords?servicesOffered='Web Developer'">
+                                    <Link href="/talentRecords?servicesOffered=Web%20Developer">
                                         <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Web Developer
                                         </a>
                                     </Link>

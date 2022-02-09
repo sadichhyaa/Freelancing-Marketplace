@@ -1,24 +1,26 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const TalentFilter = () => {
+    const router = useRouter();
+
+    const { servicesOffered } = router.query;
+
     return (
         <>
-            <select className="filter-box">
+            <select className="filter-box" onChange={(e) => {
+                router.push(e.target.value)
+            }}>
                 <option value=''>Filter</option>
-                <Link href="/talentRecords?sort='-price'">
-                    <option value='-price'>Price low to high</option>
-                </Link>
-                <Link href="/talentRecords?sort='price'">
-                    <option value='price'>price high to low</option>
 
-                </Link>
-                <Link href="/talentRecords?sort='-averageRating'">
-                    <option value='-averageRating'>Rating low to high</option>
+                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=-price`}>
+                    Price high to low
+                </option>
 
-                </Link>
-                <Link href="/talentRecords?sort='averageRating'">
-                    <option value='averageRating'>Rating high to low</option>
-                </Link>
+                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=price`}>price low to high</option>
+                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=-averageRating`}>Rating low to high</option>
+
+                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=averageRating`}>Rating high to low</option>
             </select>
 
         </>

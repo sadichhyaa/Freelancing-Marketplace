@@ -11,9 +11,7 @@ const TalentRecords = (props) => {
     const [records, setRecords] = useState([]);
     const router = useRouter();
 
-    const { servicesOffered, sort } = router.query;
-
-    useEffect(() => {
+    const fetchRecords = (servicesOffered, sort) => {
         api.get('/talentsAll', {
             params: {
                 servicesOffered: servicesOffered,
@@ -24,7 +22,19 @@ const TalentRecords = (props) => {
             setRecords([...data.talents]);
             setIsLoading(false);
         });
+    }
+
+    useEffect(() => {
+        const url = new URL(window.location.href);
+        const params = url.searchParams;
+        fetchRecords(params.get('servicesOffered'), params.get('sort'));
     }, []);
+
+    useEffect(() => {
+        if (router.query.sort) {
+            fetchRecords(router.query.servicesOffered, router.query.sort);
+        }
+    }, [router.query.sort]);
 
     return (
         <>
@@ -32,7 +42,7 @@ const TalentRecords = (props) => {
             <div className="container d-flex justify-content-center align-items-center">
                 <div className="record-content-container shadow">
                     <div className="record-header d-flex">
-                        <h2>{servicesOffered}</h2>
+                        <h2>{router.query.servicesOffered}</h2>
                         <TalentFilter />
                     </div>
                     <div className="records">
@@ -41,7 +51,7 @@ const TalentRecords = (props) => {
                                 <div className="records-main" key={`talent-${i}`}>
                                     <div className="records-box shadow p-2">
                                         <div className="records-photo mx-3">
-                                            <img src="./images/banner2.jpg" />
+                                            <img src={r.profilePicture} />
                                         </div>
                                         <div className="record-info mx-3">
                                             <div className="talent-name p-2"><p>{r.fullName}</p></div>
@@ -49,7 +59,7 @@ const TalentRecords = (props) => {
                                         </div>
                                         <div className="records-price p-2 m-3">
                                             <div className="price">
-                                                <h2>{r.price}</h2>
+                                                <h2>Rs.{r.price}</h2>
                                             </div>
                                         </div>
                                     </div>
