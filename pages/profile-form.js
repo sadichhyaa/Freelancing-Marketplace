@@ -75,10 +75,10 @@ const ProfileForm = () => {
                     router.push('/profile');
                 });
         } else {
+            console.log('Hii')
             api.post('/talent/my_portfolio', formData)
                 .then(({ data }) => {
                     console.log(data);
-
                 })
                 .catch((err) => {
                     // alert(err.response?.data.error)
@@ -126,7 +126,7 @@ const ProfileForm = () => {
                         <h2>Join As Freelancer</h2>
                     </div>
                     <div className="row m-3">
-                        <form onSubmit={handleSubmit(onSubmit)} noValidate enctype="multipart/form-data">
+                        <form onSubmit={handleSubmit(onSubmit)} noValidate encType="multipart/form-data">
                             <div className="input-group mt-3 mb-5">
                                 <span className="details me-5 d-flex align-items-center justify-content-center">Full Name*</span>
                                 <input type="text" className="form-control " placeholder="Username" aria-label="Username"

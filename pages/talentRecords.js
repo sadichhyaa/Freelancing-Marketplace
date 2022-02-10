@@ -11,6 +11,10 @@ const TalentRecords = (props) => {
     const [records, setRecords] = useState([]);
     const router = useRouter();
 
+    const onClickHandler = (talent_id) => {
+        router.push(`talentProfiles?talent_id=${talent_id}`)
+    }
+
     const fetchRecords = (servicesOffered, sort) => {
         api.get('/talentsAll', {
             params: {
@@ -49,7 +53,7 @@ const TalentRecords = (props) => {
                         {
                             !isLoading && records.length > 0 && records.map((r, i) => (
                                 <div className="records-main" key={`talent-${i}`}>
-                                    <div className="records-box shadow p-2">
+                                    <div className="records-box shadow p-2" onClick={() => onClickHandler(r._id)}>
                                         <div className="records-photo mx-3">
                                             <img src={r.profilePicture} />
                                         </div>

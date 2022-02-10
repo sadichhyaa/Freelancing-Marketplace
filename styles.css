@@ -647,7 +647,9 @@ footer {
 
 .records-photo {
     width: 200px;
+    min-width: 200px;
     height: 200px;
+    min-width: 200px;
 }
 
 .records-photo img {

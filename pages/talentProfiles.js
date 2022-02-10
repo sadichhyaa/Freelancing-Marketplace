@@ -18,8 +18,17 @@ const TalentProfile = () => {
             });
     };
 
+    const fetchRecord = (talent_id) => {
+        api.get(`/talent/profile/${talent_id}`)
+            .then(({ data }) => {
+                console.log(data);
+            })
+    }
+
     useEffect(() => {
-        api.get()
+        const url = new URL(window.location.href);
+        const params = url.searchParams;
+        fetchRecord(params.get("talent_id"));
     }, [])
 
     return (
