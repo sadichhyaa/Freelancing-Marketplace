@@ -61,12 +61,12 @@ const Profile = () => {
                                         <i class="fa fa-circle"></i>
                                         <span className="ms-2">Available</span>
                                     </div>
-                                    <div className="col ratings">
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
+                                    <div className="col">
+                                        <i className="fa fa-star m-1"></i>
+                                        <i className="fa fa-star m-1"></i>
+                                        <i className="fa fa-star m-1"></i>
+                                        <i className="fa fa-star m-1"></i>
+                                        <i className="fa fa-star m-1"></i>
                                     </div>
                                 </div>
                                 <div className="row talent-description mx-auto m-3 p-2" style={{ borderBottom: " 2px solid #FFD3B2" }} >
