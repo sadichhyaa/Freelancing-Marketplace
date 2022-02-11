@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import api from "../services/api";
 import Link from "next/link";
 
+
 const Profile = () => {
     const [profile, setProfile] = useState(null)
 
@@ -60,7 +61,7 @@ const Profile = () => {
                                         <i class="fa fa-circle"></i>
                                         <span className="ms-2">Available</span>
                                     </div>
-                                    <div className="col">
+                                    <div className="col ratings">
                                         <i class="fa fa-star m-1"></i>
                                         <i class="fa fa-star m-1"></i>
                                         <i class="fa fa-star m-1"></i>
