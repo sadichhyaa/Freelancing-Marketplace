@@ -5,11 +5,16 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import axios from "axios";
 
 const TalentRecords = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [records, setRecords] = useState([]);
     const router = useRouter();
+
+    const onClickHandler = (abc)=>{
+        router.push(`/talentProfiles?abc=${abc}`)
+    }
 
     const fetchRecords = (servicesOffered, sort) => {
         api.get('/talentsAll', {
@@ -19,6 +24,7 @@ const TalentRecords = (props) => {
             }
         }).then(({ data }) => {
             console.log(data.talents);
+            
             setRecords([...data.talents]);
             setIsLoading(false);
         });
@@ -48,13 +54,13 @@ const TalentRecords = (props) => {
                     <div className="records">
                         {
                             !isLoading && records.length > 0 && records.map((r, i) => (
-                                <div className="records-main" key={`talent-${i}`}>
-                                    <div className="records-box shadow p-2">
+                                <div className="records-main"  key={`talent-${i}`}>
+                                    <div className="records-box shadow p-2" >
                                         <div className="records-photo mx-3">
                                             <img src={r.profilePicture} />
                                         </div>
                                         <div className="record-info mx-3">
-                                            <div className="talent-name p-2"><p>{r.fullName}</p></div>
+                                            <div className="talent-name p-2" onClick={() => onClickHandler(r._id)}><p>{r.fullName}</p></div>
                                             <div className="talent-description p-2"><p>{r.description}</p></div>
                                         </div>
                                         <div className="records-price p-2 m-3">

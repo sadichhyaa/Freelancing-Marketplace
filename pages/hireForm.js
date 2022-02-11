@@ -34,22 +34,32 @@ const HireForm = () => {
     const { register, formState: { errors }, handleSubmit, setError } = useForm({ resolver: yupResolver(schema) });
     const [profile, setProfile] = useState(null)
 
-
     const router = useRouter();
+
+    useEffect(() => {
+        api.get('/employer/me').then(({ data }) => {
+            console.log(data);
+            console.log(data.profile);
+            if(data.profile){
+                setProfile(data.profile)
+            }
+            else{
+                router.push('/')
+            }
+        })
+    }, [])
 
     const onSubmit = (data) => {
         console.log(data);
-        setIsLoading(true);
-
-        // api.post('/employer/talent/profile/hire/:id')
+        
+        api.post(`/employer/talent/profile/hire/${profile._id}`)
+            .then((res)  => {
+                alert(res.data.message);
+            }).catch((err)=> err.response?.data && alert(err.response?.data.error))
+            .finally(()=>{
+                router.push('/')
+            });
     }
-
-    useEffect(() => {
-        api.get('/profile/me').then(({ data }) => {
-            console.log(data);
-            console.log(data.profile);
-        })
-    }, [])
 
     return (
         <>
@@ -93,7 +103,8 @@ const HireForm = () => {
                         {errors.message && <div className="error-message">{errors.message.message}</div>}
 
                         <div className="hire-btn-div">
-                            <button className="btn hire-btn" disabled={isLoading}>Confirm</button>
+                            
+                                <button type="submit" className="btn hire-btn" disabled={isLoading}>Confirm</button>                         
                         </div>
                     </form>
 

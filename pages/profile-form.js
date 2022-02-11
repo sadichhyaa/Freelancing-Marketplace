@@ -37,7 +37,23 @@ const ProfileForm = () => {
     const { register, formState: { errors }, handleSubmit, setValue } = useForm({ resolver: yupResolver(schema) });
     const [isLoading, setIsLoading] = useState(false);
     const [profile, setProfile] = useState(null);
+    const [profileImage, setProfileImage] = useState([]);
+    const [profileImageurl, setProfileImageurl] = useState([]);
+
     const { update: isUpdate } = router.query;
+
+    useEffect(()=>{
+        if(profileImage.length <1) return;
+       const newImageUrl = [];
+       console.log(typeof profileImage);
+        try {
+            
+            Object.keys(profileImage).forEach((image)=>newImageUrl.push(URL.createObjectURL(image)))
+        } catch (error) {
+            console.log(error)
+        }
+       setProfileImageurl(newImageUrl)
+    },[profileImage])
 
     const onSubmit = (data) => {
         let formData = new FormData();
@@ -50,11 +66,11 @@ const ProfileForm = () => {
 
         formData.append("description", data.description);
 
-        data.listOfSkills.split(',').map((s, i) => {
-            formData.append(`listOfSkills[${i}]`, s);
+        data.listOfSkills.split(',').map((s) => {
+            formData.append('listOfSkills', s);
         })
-        data.projectsDone.split(',').map((p, i) => {
-            formData.append(`projectsDone[${i}]`, p);
+        data.projectsDone.split(',').map((p) => {
+            formData.append('projectsDone', p);
         });
 
         formData.append("price", data.price);
@@ -68,6 +84,8 @@ const ProfileForm = () => {
             api.patch(`/talent/profile/${profile._id}`, formData)
                 .then(({ data }) => {
                     console.log(data);
+                    console.log(data.profilePicture);
+
                 })
                 .catch((err) => err.response && alert(err.response?.data.error))
                 .finally(() => {
@@ -77,8 +95,7 @@ const ProfileForm = () => {
         } else {
             api.post('/talent/my_portfolio', formData)
                 .then(({ data }) => {
-                    console.log(data);
-
+                    console.log(data);  
                 })
                 .catch((err) => {
                     // alert(err.response?.data.error)
@@ -91,15 +108,23 @@ const ProfileForm = () => {
                 });
         }
     }
+    const onImageChange=(e)=>{
+        console.log(e.target.files)
+        setProfileImage(e.target.files[0])
+    }
 
     useEffect(() => {
         if (isUpdate) {
             api.get('/profile/me').then(({ data }) => {
                 console.log(data);
                 setProfile(data.profile);
+                setProfileImage([data.profile.profilePicture])
                 for (const [key, value] of Object.entries(data.profile)) {
                     if (key !== 'profilePicture') {
                         setValue(key, value);
+                    }
+                    if (key === 'profilePicture') {
+                        setValue(key, null);
                     }
                     if (key == 'listOfSkills') {
                         setValue(key, data.profile.listOfSkills.map((p, i) => {
@@ -126,7 +151,7 @@ const ProfileForm = () => {
                         <h2>Join As Freelancer</h2>
                     </div>
                     <div className="row m-3">
-                        <form onSubmit={handleSubmit(onSubmit)} noValidate enctype="multipart/form-data">
+                        <form onSubmit={handleSubmit(onSubmit)} noValidate encType="multipart/form-data">
                             <div className="input-group mt-3 mb-5">
                                 <span className="details me-5 d-flex align-items-center justify-content-center">Full Name*</span>
                                 <input type="text" className="form-control " placeholder="Username" aria-label="Username"
@@ -137,13 +162,13 @@ const ProfileForm = () => {
 
                             {
                                 profile && profile.profilePicture && (
-                                    <div className="preview-image"><img style={{ width: "100%" }} src={profile.profilePicture} /></div>
+                                    <div className="preview-image"><img style={{ width: "100%" }} src={profileImageurl[0]} /></div>
                                 )
                             }
                             <div className="input-group mb-5">
                                 <span className="details me-5  d-flex align-items-center justify-content-center">Profile
                                     Picture*</span>
-                                <input type="file" className="form-control" id="inputGroupFile02" {...register("profilePicture")} />
+                                <input type="file" className="form-control"  id="inputGroupFile02" multiple accept={'image/*'} {...register("profilePicture")} onChange={onImageChange} />
                                 <label className="input-group-text">Upload</label>
                             </div>
                             {errors.profilePicture && <div className="error-message">{errors.profilePicture.message}</div>}
