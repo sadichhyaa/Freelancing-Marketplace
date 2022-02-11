@@ -1,4 +1,3 @@
-import Router from "next/router";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import api from "../services/api";
@@ -59,11 +58,7 @@ const TalentProfile = () => {
                                         <span className="ms-2">Available</span>
                                     </div>
                                     <div className="col">
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
-                                        <i class="fa fa-star m-1"></i>
+                                        <Rating />
                                     </div>
                                 </div>
                                 <div className="row talent-description mx-auto m-3 p-2" style={{ borderBottom: " 2px solid #FFD3B2" }} >
