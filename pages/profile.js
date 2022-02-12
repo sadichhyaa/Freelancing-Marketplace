@@ -90,11 +90,7 @@ const Profile = () => {
                     <span className='ms-2'>Available</span>
                   </div>
                   <div className='col'>
-                    <i className='fa fa-star m-1'></i>
-                    <i className='fa fa-star m-1'></i>
-                    <i className='fa fa-star m-1'></i>
-                    <i className='fa fa-star m-1'></i>
-                    <i className='fa fa-star m-1'></i>
+                    <Rating />
                   </div>
                 </div>
                 <div

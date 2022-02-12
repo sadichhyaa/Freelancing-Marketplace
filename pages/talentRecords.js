@@ -49,27 +49,33 @@ const TalentRecords = (props) => {
       <NavBar />
       <div className='container d-flex justify-content-center align-items-center'>
         <div className='record-content-container shadow'>
-          <div className='record-header d-flex'>
-            <h2>{router.query.servicesOffered}</h2>
-            <TalentFilter />
+          <div className='row record-header d-flex mt-5'>
+            <div className='col'>
+              <h2>{router.query.servicesOffered}</h2>
+
+            </div>
+            <div className='col d-flex, justify-content-center align-items-center'>
+              <TalentFilter />
+            </div>
+
+
           </div>
-          <div className='records'>
+          <div className='records my-5'>
             {!isLoading &&
               records.length > 0 &&
               records.map((r, i) => (
                 <div className='records-main' key={`talent-${i}`}>
-                  <div className='records-box shadow p-2'>
+                  <div className='records-box shadow p-2 mb-4' onClick={() => onClickHandler(r._id)}>
                     <div className='records-photo mx-3'>
                       <img src={r.profilePicture} />
                     </div>
                     <div className='record-info mx-3'>
                       <div
                         className='talent-name p-2'
-                        onClick={() => onClickHandler(r._id)}
                       >
                         <p>{r.fullName}</p>
                       </div>
-                      <div className='talent-description p-2'>
+                      <div className='record-description p-2'>
                         <p>{r.description}</p>
                       </div>
                     </div>

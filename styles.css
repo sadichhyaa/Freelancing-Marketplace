@@ -642,12 +642,12 @@ footer {
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    width: 70%;
+    width: 100%;
 }
 
 .records-photo {
-    width: 200px;
-    min-width: 200px;
+    width: 25%;
+    min-width: 25%;
     height: 200px;
     min-width: 200px;
 }
@@ -671,6 +671,7 @@ footer {
     justify-content: center;
     background-color: antiquewhite;
     border-radius: 4px;
+    width: 25%;
 }
 
 .talent-name {
@@ -679,5 +680,17 @@ footer {
 }
 
 .no-record {
+    width: 80%;
+}
+
+.records {
+    width: 80%;
+}
+
+.record-info {
+    width: 50%;
+}
+
+.record-header {
     width: 80%;
 }
