@@ -35,7 +35,7 @@ const TalentProfile = () => {
       })
       .catch((err) => err.response?.data && alert(err.response?.data.error))
       .finally(() => {
-        router.push('/hireForm');
+        router.push(`/hireForm?emp=${record._id}`);
       });
   };
   const fetchRecord = (abc) => {

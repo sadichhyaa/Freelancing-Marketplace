@@ -9,6 +9,8 @@ import api from '../services/api';
 const { yupResolver } = require('@hookform/resolvers/yup');
 
 const HireForm = () => {
+  const router = useRouter();
+
   let schema = yup.object().shape({
     name: yup
       .string()
@@ -33,8 +35,6 @@ const HireForm = () => {
   } = useForm({ resolver: yupResolver(schema) });
   const [profile, setProfile] = useState(null);
 
-  const router = useRouter();
-
   useEffect(() => {
     api.get('/employer/me').then(({ data }) => {
       console.log(data);
@@ -48,7 +48,9 @@ const HireForm = () => {
   }, []);
 
   const onSubmit = (data) => {
-    data.talentId = profile._id;
+    const url = new URL(window.location.href);
+    const params = url.searchParams;
+    data.talentId = params.get('emp');
     console.log(data);
     api
       .post(`/employer/talent/profile/hire`, data)
