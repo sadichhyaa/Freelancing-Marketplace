@@ -18,9 +18,9 @@ const TalentFilter = () => {
                 </option>
 
                 <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=price`}>price low to high</option>
-                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=-averageRating`}>Rating low to high</option>
+                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=averageRating`}>Rating low to high</option>
 
-                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=averageRating`}>Rating high to low</option>
+                <option value={`/talentRecords?servicesOffered=${servicesOffered}&sort=-averageRating`}>Rating high to low</option>
             </select>
 
         </>

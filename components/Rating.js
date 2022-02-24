@@ -29,19 +29,20 @@
 import ReactStars from "react-rating-stars-component"
 
 
-function Rating() {
-  const ratingChanged = (rating) => {
-//    alert("You gave {rating} ratings")
-   console.log(rating);
+function Rating({onRatingClick,rating}) {
+//   const ratingChanged = (rating) => {
+// //    alert("You gave {rating} ratings")
+//    console.log(rating);
     
-  };
+//   };
   return (
     <>
         <div className="Ratings">
          <ReactStars
          activeColor="#fe8529"
          size={30}
-         onChange={ratingChanged}
+         value={rating}
+         onChange={onRatingClick}
          />
         </div>
         

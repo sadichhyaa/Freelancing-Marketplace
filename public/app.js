@@ -3,5 +3,5 @@ window.addEventListener("scroll", function () {
     const loginText = document.getElementById('login_text');
 
     navbar.classList.toggle('sticky', window.scrollY > 0);
-    loginText.classList.toggle('login-text-scroll', window.scrollY > 0);
+    loginText?.classList.toggle('login-text-scroll', window.scrollY > 0);
 });

@@ -57,7 +57,9 @@ const HireForm = () => {
       .then((res) => {
         alert(res.data.message);
       })
-      .catch((err) => err.response?.data && alert(err.response?.data.error))
+      .catch((err) => {
+        err.response?.data && alert(err.response?.data.error)
+      })
       .finally(() => {
         router.push('/');
       });
