@@ -1,21 +1,26 @@
 import Link from 'next/link';
 import api from '../services/api';
 import { useState, useEffect } from 'react';
+import { Router } from 'next/router';
+import { useRouter } from "next/router";
+import Cookies from 'js-cookie';
 
 const NavBar = () => {
   const [profile, setProfile] = useState(null);
 
-  // useEffect(() => {
-  //     api.get('/profile/me').then(({ data }) => {
-  //         if (data.profile) {
-  //             setProfile(data.profile);
-  //         }
-  //     });
-  // }, []);
+  useEffect(() => {
+      const token = Cookies.get("auth_token");
+      setProfile(token);
+  }, []);
+
+  const router = useRouter();
 
   const logout = () => {
     document.cookie =
       'auth_token' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    alert('You have been logged out');
+    location.reload(true);
+    router.push('/');
   };
 
   return (
@@ -60,7 +65,7 @@ const NavBar = () => {
                   About
                 </a>
               </li>
-              <li className='nav-item dropdown me-5 '>
+              {profile ? (<div></div>) : <li className='nav-item dropdown me-5 '>
                 <a
                   className='nav-link dropdown-toggle text-white'
                   href='#'
@@ -78,7 +83,7 @@ const NavBar = () => {
                   aria-labelledby='navbarDropdownMenuLink'
                 >
                   <li className='m-0'>
-                    <Link href='/taleng-login'>
+                    <Link href='/talent-login'>
                       <a className='dropdown-item p-1'>Talent</a>
                     </Link>
                   </li>
@@ -88,13 +93,15 @@ const NavBar = () => {
                     </Link>
                   </li>
                 </ul>
-              </li>
-              <li className='nav-item pages-link'>
+              </li>}
+              
+              {profile ? <li className='nav-item pages-link'>
                 <a className='nav-link' onClick={() => logout()}>
                   Logout
                 </a>
-              </li>
-              <li className='nav-item'>
+              </li> : <div></div>}
+              
+              {profile ? <div></div> : <li className='nav-item'>
                 {profile ? (
                   <Link href={'/profile'}>
                     <a>{profile.fullName}</a>
@@ -111,7 +118,8 @@ const NavBar = () => {
                   </Link>
                   
                 )}
-              </li>
+              </li>}
+              
             </ul>
           </div>
         </div>

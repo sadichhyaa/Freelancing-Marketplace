@@ -176,6 +176,7 @@
 import Router from 'next/router';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
+import Rating from '../components/Rating';
 import api from '../services/api';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -186,36 +187,82 @@ import axios from 'axios';
 const TalentProfile = () => {
     const router = useRouter();
     const [record, setRecord] = useState();
+    const [talentId, setTalentID] = useState('');
+
     const [profile, setProfile] = useState(null);
+    // const [value,setValue] = useState();
+
+useEffect(()=>{
+    onPageLoad();
+},[])
+
+const onPageLoad = ()=>{
+    const url = new URL(window.location.href);
+        const params = url.searchParams;
+        fetchRecord(params.get('abc'));
+        setTalentID(params.get('abc'))
+
+    getProfile();
+}
+
+const getProfile =async ()=>{
+    // let profileId = '';
+    await api
+        .get('/employer/me')
+        .then(({ data }) => {
+            console.log(data.profile)
+            if (data.profile) {
+                setProfile(data.profile);
+                // profileId = data.profile._id;
+            }
+        })
+        .catch((err) => {
+            console.log('You should be logged in as employer');
+            //router.push('/employer-login')
+        });
+
+}
+
+
+
+    const onRatingClickHandler = async (rating)=>{
+        // upama
+        await api.post(`/employer/rating/${talentId}`,{rating})
+        .then(({data}) =>{
+            alert(data.message);
+        })
+        .catch((err) => err.response?.data && alert(err.response?.data.error))
+        .finally(() => {
+            // router.push('/pages/talentProfiles');
+            onPageLoad();
+        });
+// error
+
+    }
 
     const onClickHandler = async () => {
-        let profileId = '';
+        if (profile) {
         await api
-            .get('/employer/me')
-            .then(({ data }) => {
-                if (data.profile) {
-                    setProfile(data.profile);
-                    profileId = data.profile._id;
-                }
-            })
-            .catch((err) => {
-                console.log('You should be logged in as employer');
-                //router.push('/employer-login')
-            });
-
-        await api
-            .get(`/employer/talent/profile/hire/${profileId}`)
+            .get(`/employer/talent/profile/hire/${profile._id}`)
             .then(({ data }) => {
                 alert(data.message);
             })
-            .catch((err) => err.response?.data && alert(err.response?.data.error))
+            .catch((err) => {
+                err.response?.data && alert(err.response?.data.error)
+                alert('You are unauthorized. Please log in as Employer');
+            })
             .finally(() => {
                 router.push(`/hireForm?emp=${record._id}`);
             });
+        } else {
+            alert('You are not an Employer. Please log in');
+            router.push('./sign-up');
+        }
     };
     const fetchRecord = (abc) => {
+        setRecord()
         api.get('/talent/profile/' + abc).then(({ data }) => {
-            console.log(data);
+            // console.log(data);
             setRecord(data.profile);
         });
     };
@@ -233,11 +280,6 @@ const TalentProfile = () => {
     //     })
     // }, [])
 
-    useEffect(() => {
-        const url = new URL(window.location.href);
-        const params = url.searchParams;
-        fetchRecord(params.get('abc'));
-    }, []);
 
     return (
         <>
@@ -295,7 +337,7 @@ const TalentProfile = () => {
                                         <span className='ms-2 p-0'>Available</span>
                                     </div>
                                     <div className='col'>
-                                        {/* `<Rating />` */}
+                                        <Rating onRatingClick={onRatingClickHandler} rating={record.averageRating} />
                                     </div>
                                 </div>
                                 <div

@@ -5,6 +5,7 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 const { yupResolver } = require("@hookform/resolvers/yup");
 
@@ -26,15 +27,15 @@ const TalentLogIn = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const onSubmit = (data) => {
-        console.log(data);
+        // console.log(data);
         setIsLoading(true);
 
         let url = '/login/talent'
         axios.post(process.env.NEXT_PUBLIC_API + url, data)
             .then(({ data }) => {
-                console.log(data);
+                console.log(data.token);
                 Cookies.set("auth_token", data.token);
-                router.push('/');
+                // router.push('/');
             }).catch((err) => {
                 if (err.response?.data && err.response?.data.error) {
                     setError("email", {
@@ -45,7 +46,7 @@ const TalentLogIn = () => {
                 console.log(err.response?.data);
             }).finally(() => {
                 setIsLoading(false);
-                router.push('/talent-login')
+                router.push('/')
             })
 
     };

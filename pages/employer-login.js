@@ -5,6 +5,7 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 const { yupResolver } = require("@hookform/resolvers/yup");
 
@@ -33,7 +34,7 @@ const EmployerLogIn = () => {
             .then(({ data }) => {
                 console.log(data);
                 Cookies.set("auth_token", data.token);
-                router.push('/');
+                // router.push('/');
             }).catch((err) => {
                 if (err.response?.data && err.response?.data.error) {
                     setError("email", {
@@ -44,7 +45,7 @@ const EmployerLogIn = () => {
                 console.log(err.response?.data);
             }).finally(() => {
                 setIsLoading(false);
-                router.push('/')
+                router.push('/');
             })
 
     };
