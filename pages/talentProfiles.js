@@ -307,7 +307,7 @@ const getProfile =async ()=>{
                                     <p className='name-p'>{record.fullName}</p>
                                 </div>
                                 <div className='row talent-price mb-3 p-2'>
-                                    <p className='price-p'>{record.price}</p>
+                                    <p className='price-p'>Rs. {record.price}</p>
                                 </div>
                                 <div className='row talent-projects shadow-sm mb-3 p-2 ps-3'>
                                     <p
