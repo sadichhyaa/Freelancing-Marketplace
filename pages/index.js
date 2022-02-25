@@ -94,9 +94,7 @@ const Home = () => {
           <div className="find-great-work-content">
             <h1>Find Great Work</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus sint deleniti facere non labore
-              velit ex? Reiciendis harum, optio totam laudantium quaerat itaque quisquam labore a molestiae
-              necessitatibus repudiandae doloremque!
+            Work with the largest network of independent professionals and get things done—from quick turnarounds to big transformations.
             </p>
           </div>
         </div>
@@ -171,8 +169,7 @@ const Home = () => {
               <ul className="fa-ul mt-4" style={{ fontSize: "1.125rem" }}>
                 <li><span className="fa-li"><i className="fa fa-lg fa-check-circle"></i></span> Best for every budget
                   <ul style={{ listStyleType: "none" }}>
-                    <li className="mb-3" style={{ lineHeight: "1.5rem" }}>Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Illo tenetur facere repellat architecto cupiditate aspernatur.
+                    <li className="mb-3" style={{ lineHeight: "1.5rem" }}>Select potential fits for your job, negotiate rates, and only pay for work you approve.
                     </li>
                   </ul>
                 </li>
@@ -180,8 +177,7 @@ const Home = () => {
                 <li><span className="fa-li"><i className="fa fa-lg fa-check-circle"></i></span> Quality work done
                   quickly
                   <ul style={{ listStyleType: "none" }}>
-                    <li style={{ lineHeight: "1.5rem" }}>Lorem ipsum dolor sit amet consectetur adipisicing
-                      elit. Illo tenetur facere repellat architecto cupiditate aspernatur.</li>
+                    <li style={{ lineHeight: "1.5rem" }}>Find the right freelancer to begin working on your project within minutes.</li>
                   </ul>
                 </li>
               </ul>

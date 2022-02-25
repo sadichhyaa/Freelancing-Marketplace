@@ -67,7 +67,7 @@ const TalentRecords = (props) => {
                 <div className='records-main' key={`talent-${i}`}>
                   <div className='records-box shadow p-2 mb-4' onClick={() => onClickHandler(r._id)}>
                     <div className='records-photo mx-3'>
-                      <img src={r.profilePicture} />
+                      <img src={r.profilePicture}/>
                     </div>
                     <div className='record-info mx-3'>
                       <div

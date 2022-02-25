@@ -52,6 +52,7 @@ header {
     background: transparent;
     z-index: 1;
     transition: 0.5s ease;
+    
 }
 
 /* .nav-item:hover {
@@ -79,6 +80,7 @@ header {
     margin-left: 106px;
     list-style-type: none;
     font-size: 16px;
+   
 }
 
 .pages-link {
@@ -490,7 +492,7 @@ footer {
     justify-content: center;
     align-items: stretch;
     width: 80%;
-    border: 2px solid #FFD3B2;
+    /* border: 2px solid #FFD3B2; */
 }
 
 .profile-main {
@@ -514,12 +516,12 @@ footer {
 .talent-image {
     width: 250px;
     height: 250px;
-    border: 2px solid #FFD3B2;
+    /* border: 2px solid #FFD3B2; */
     border-radius: 4px;
 }
 
 .talent-projects {
-    border: 2px solid #FFD3B2;
+    /* border: 2px solid var(--orange-ball); */
     border-radius: 4px;
     margin: 0 auto;
     width: 80%;
@@ -566,11 +568,16 @@ footer {
 
 }
 
-.talent-description p,
+.talent-description p{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
 .talent-status .col {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:left;
 }
 
 .fa-star {
@@ -640,7 +647,7 @@ footer {
     border-radius: 4px;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     width: 100%;
 }
@@ -676,8 +683,12 @@ footer {
 
 .talent-name {
     font-size: 20px;
-    font-weight: 600;
+   
+    
 }
+/* .talent-skill{
+    border:#04aa6d;
+} */
 
 .no-record {
     width: 80%;

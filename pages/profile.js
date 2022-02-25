@@ -90,7 +90,7 @@ const Profile = () => {
                     <span className='ms-2'>Available</span>
                   </div>
                   <div className='col'>
-                    <Rating />
+                    {/* <Rating /> */}
                   </div>
                 </div>
                 <div
