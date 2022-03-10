@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import Script from "next/script";
 
 
 const Home = () => {
@@ -18,12 +19,12 @@ const Home = () => {
                   <h1 className="fw-bold">Find out talented <span>freelancer.</span></h1>
                   <p style={{ fontweight: "600" }}>Freelancer with better ratings and <br />high profile.</p>
                 </div>
-                <div className="input-group " style={{ width: "60%" }}>
+                {/* <div className="input-group " style={{ width: "60%" }}>
                   <input type="search" className="form-control rounded" placeholder="Eg. Electrician "
                     aria-label="Search" aria-describedby="search-addon" />
                   <button type="button" className="btn "
                     style={{ backgroundColor: "var(--orange-ball)", color: "var(--white)" }}>Search</button>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-12 col-lg-6 banner">
@@ -106,53 +107,96 @@ const Home = () => {
 
           <div className="row">
             <div className="col-12 col-md-3">
-              <div className="service-box shadow-sm">
-                <img className="mt-4" src="./images/housekeeper.png" alt="" />
-                <p className="mt-3">Maid</p>
-              </div>
+            <Link href="/talentRecords?servicesOffered=Maid">  
+                <a style={{textDecoration :"none", color:"black"}}>
+                <div className="service-box shadow-sm">
+                <img className="mt-4" src="./images/housekeeper.png" alt=""/>
+                <p className="mt-3" >Maid</p>
+                </div>  
+                </a>
+                </Link>
             </div>
+              
+                
+              
+                
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Tutor">    
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/teacher.png" alt="" className="mt-4" />
-
                 <p className="mt-3">Tutor</p>
-              </div>
+                </div>
+                </a>
+                
+              </Link>  
+              
             </div>
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Developer">
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/coding.png" alt="" className="mt-4" />
                 <p className="mt-3">Developer</p>
               </div>
+              </a>
+              
+            </Link>  
             </div>
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Painter">
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/painter.png" alt="" className="mt-4" />
                 <p className="mt-3">Painter</p>
               </div>
+              </a>
+              
+            </Link>
             </div>
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Gardener">
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/gardener.png" alt="" className="mt-4" />
                 <p className="mt-3">Gardener</p>
               </div>
+              </a>
+              
+            </Link>  
             </div>
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Beautician">
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/makeup.png" alt="" className="mt-4" />
                 <p className="mt-3">Beautician</p>
               </div>
+
+              </a>
+            </Link>  
             </div>
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Plumber">
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/plumber.png" alt="" className="mt-4" />
                 <p className="mt-3">Plumber</p>
               </div>
+              </a>
+              
+            </Link>  
             </div >
             <div className="col-12 col-md-3">
+            <Link href="/talentRecords?servicesOffered=Graphic%20Design">
+              <a style={{textDecoration :"none", color:"black"}}>
               <div className="service-box shadow-sm">
                 <img src="/images/graphic-design.png" alt="" className="mt-4" />
                 <p className="mt-3">Graphic Design</p>
               </div>
+              </a>
+              
+            </Link>  
             </div>
           </div >
 
@@ -192,7 +236,22 @@ const Home = () => {
         </div>
       </main>
       <Footer />
+      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                    crossorigin="anonymous" />
+                <Script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+crossorigin="anonymous"></Script>
 
+<Script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" 
+integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" 
+crossorigin="anonymous"></Script>
+
+<Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" 
+integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" 
+crossorigin="anonymous"></Script>
+
+      
 
     </>);
 };
