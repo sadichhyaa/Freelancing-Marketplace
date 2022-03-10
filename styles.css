@@ -52,7 +52,7 @@ header {
     background: transparent;
     z-index: 1;
     transition: 0.5s ease;
-    
+
 }
 
 /* .nav-item:hover {
@@ -80,7 +80,7 @@ header {
     margin-left: 106px;
     list-style-type: none;
     font-size: 16px;
-   
+
 }
 
 .pages-link {
@@ -506,25 +506,23 @@ footer {
 
 .talent-image {
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     border-color: var(--orange-ball);
-    border-radius: 50%;
     background-color: var(--white);
-}
-
-.talent-image {
-    width: 250px;
-    height: 250px;
-    /* border: 2px solid #FFD3B2; */
-    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
     margin: 0;
 }
-.talent-name-box{
+
+
+.talent-name-box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .talent-projects {
     /* border: 2px solid var(--orange-ball); */
     border-radius: 4px;
@@ -562,13 +560,12 @@ footer {
 
     margin-bottom: 0;
 } */
-.profile-col1{
+.profile-col1 {
     width: 80%;
     height: auto;
 }
 
-.name-p
- {
+.name-p {
     font-Size: 24px;
     font-Weight: 600;
     display: flex;
@@ -577,12 +574,22 @@ footer {
     margin-bottom: 0;
 
 }
-.price-p{
-    font-Size: 24px;
-    font-Weight: 600;
+
+.talent-price {
+    background-color: var(--orange-ball);
+    border-radius: 4px;
+    width: 30%;
+
+
 }
 
-.talent-description p{
+.price-p {
+    font-Size: 20px;
+    font-Weight: 600;
+    color: var(--white);
+}
+
+.talent-description p {
     display: flex;
     align-items: center;
     justify-content: left;
@@ -591,7 +598,7 @@ footer {
 .talent-status .col {
     display: flex;
     align-items: center;
-    justify-content:left;
+    justify-content: left;
 }
 
 .fa-star {
@@ -620,7 +627,9 @@ footer {
 .hire-btn-div,
 .hire-form label,
 .records-main,
-.records-header {
+.records-header,
+.talent-price,
+.price-p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -697,9 +706,10 @@ footer {
 
 .talent-name {
     font-size: 20px;
-   
-    
+
+
 }
+
 /* .talent-skill{
     border:#04aa6d;
 } */
