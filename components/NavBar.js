@@ -7,17 +7,20 @@ import Cookies from 'js-cookie';
 
 const NavBar = () => {
   const [profile, setProfile] = useState(null);
-  const [token,setToken] = useState(null);
+  const [token, setToken] = useState(null);
   useEffect(() => {
     const token = Cookies.get("auth_token");
-    const profile = JSON.parse(Cookies.get("talent"));
-    setToken(token);
-    setProfile(profile)
-    console.log(profile.profile.fullName);
+    if (Cookies.get("talent")) {
+      const profile = JSON.parse(Cookies.get("talent"));
+      setToken(token);
+      setProfile(profile)
+      console.log(profile.profile.fullName);
+    }
 
-    
+
+
   }, []);
-  
+
   const router = useRouter();
 
 
@@ -102,34 +105,34 @@ const NavBar = () => {
                   </li>
                 </ul>
               </li>}
-              
+
               {token ? <li className='nav-item pages-link'>
                 <a className='nav-link' onClick={() => logout()}>
                   Logout
                 </a>
               </li> : <div></div>}
-              
+
               {/* {token ? <div></div> : <li className='nav-item'> */}
-                {token ? (
-                  <li className='nav-item'>
-                  <Link href= '/profile'>
+              {token ? (
+                <li className='nav-item'>
+                  <Link href='/profile'>
                     <a>{profile.profile.fullName}</a>
                   </Link>
-                  </li>
-                ) : (
-                  <Link href='/sign-up'>
-                    <a
-                      type='button'
-                      className='d-flex justify-content-center align-items-center get-started-btn app-btn'
-                      style={{ color: 'white' }}
-                    >
-                      Get Started
-                    </a>
-                  </Link>
+                </li>
+              ) : (
+                <Link href='/sign-up'>
+                  <a
+                    type='button'
+                    className='d-flex justify-content-center align-items-center get-started-btn app-btn'
+                    style={{ color: 'white' }}
+                  >
+                    Get Started
+                  </a>
+                </Link>
 
-                )}
+              )}
               {/* </li>} */}
-              
+
             </ul>
           </div>
         </div>

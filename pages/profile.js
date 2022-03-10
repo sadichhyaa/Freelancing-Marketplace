@@ -48,7 +48,7 @@ const Profile = () => {
               <div className='profile-col1 col p-3' style={{ width: '100%' }}>
                 <div className='row talent-image mx-auto m-4'>
                   <img
-                    style={{ width: '100%', height: '100%' }}
+                    style={{ width: '100%', height: '100%', padding: '0px' }}
                     src={
                       profile.profilePicture ?? './images/user-placeholder.jpg'
                     }
