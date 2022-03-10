@@ -9,8 +9,8 @@ const NavBar = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-      const token = Cookies.get("auth_token");
-      setProfile(token);
+    const token = Cookies.get("auth_token");
+    setProfile(token);
   }, []);
 
   const router = useRouter();
@@ -67,7 +67,7 @@ const NavBar = () => {
               </li>
               {profile ? (<div></div>) : <li className='nav-item dropdown me-5 '>
                 <a
-                  className='nav-link dropdown-toggle ' style= {{color:"var(--orange-ball)"}}
+                  className='nav-link dropdown-toggle ' style={{ color: "var(--orange-ball)" }}
                   href='#'
                   id='login_text'
                   role='button'
@@ -94,13 +94,13 @@ const NavBar = () => {
                   </li>
                 </ul>
               </li>}
-              
+
               {profile ? <li className='nav-item pages-link'>
-                <a className='nav-link' onClick={() => logout()}>
+                <a className='nav-link' style={{ color: 'white' }} onClick={() => logout()}>
                   Logout
                 </a>
               </li> : <div></div>}
-              
+
               {profile ? <div></div> : <li className='nav-item'>
                 {profile ? (
                   <Link href={'/profile'}>
@@ -116,10 +116,10 @@ const NavBar = () => {
                       Get Started
                     </a>
                   </Link>
-                  
+
                 )}
               </li>}
-              
+
             </ul>
           </div>
         </div>

@@ -130,17 +130,17 @@ const TalentProfile = () => {
                             <div className='profile-col2 col'>
 
                                 <div
-                                    className='row talent-status m-0 p-0'
+                                    className='talent-status m-0 p-0'
                                 //  style={{ borderBottom: ' 2px solid #FFD3B2' }}
                                 >
                                     <div
-                                        className='col talent-name p-0 m-0'
+                                        className='talent-name column p-0 m-1'
                                     //  style={{ borderBottom: ' 2px solid #FFD3B2' }}
                                     >
                                         <p className='name-p'>{record.fullName}</p>
                                     </div>
 
-                                    <div className='col'>
+                                    <div className='p-1 column'>
                                         <i className='fa fa-circle '></i>
                                         <span className=' p-2'>Available</span>
                                     </div>

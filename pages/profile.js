@@ -45,7 +45,7 @@ const Profile = () => {
               className='col p-0'
               style={{ borderRight: '2px solid #FFD3B2' }}
             >
-              <div className='profile-col1 col'>
+              <div className='profile-col1 col p-3' style={{ width: '100%' }}>
                 <div className='row talent-image mx-auto m-4'>
                   <img
                     style={{ width: '100%', height: '100%' }}
@@ -58,10 +58,10 @@ const Profile = () => {
                   className='row talent-name mb-3 p-2 mx-0'
                   style={{ borderBottom: ' 2px solid #FFD3B2' }}
                 >
-                  <p className='name-p'>{profile.fullName}</p>
+                  <p className='name-p d-flex justify-content-center align-items-center'>{profile.fullName}</p>
                 </div>
-                <div className='row talent-price mb-3 p-2'>
-                  <p className='price-p'>{profile.price}</p>
+                <div className='row profile-price mb-3 p-2'>
+                  <p className='price-p' style={{ color: 'black' }}>Rs.{profile.price}/hour</p>
                 </div>
                 <div className='row talent-projects mb-3 p-2 ps-3'>
                   <p

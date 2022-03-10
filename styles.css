@@ -97,6 +97,7 @@ header {
 .navbar ul li:nth-child(3) {
     margin-right: 489px;
 }
+
 #login_text:hover {
     color: white !important;
 }
@@ -585,6 +586,8 @@ footer {
 
 }
 
+
+
 .price-p {
     font-Size: 20px;
     font-Weight: 600;
@@ -597,7 +600,12 @@ footer {
     justify-content: left;
 }
 
-.talent-status .col {
+.talent-status {
+    display: flex;
+    flex-direction: row;
+}
+
+.talent-status .column {
     display: flex;
     align-items: center;
     justify-content: left;
