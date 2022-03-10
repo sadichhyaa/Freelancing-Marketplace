@@ -67,7 +67,7 @@ const TalentRecords = (props) => {
                 <div className='records-main' key={`talent-${i}`}>
                   <div className='records-box shadow p-2 mb-4' onClick={() => onClickHandler(r._id)}>
                     <div className='records-photo mx-3'>
-                      <img src={r.profilePicture}/>
+                      <img src={r.profilePicture} />
                     </div>
                     <div className='record-info mx-3'>
                       <div
@@ -79,10 +79,10 @@ const TalentRecords = (props) => {
                         <p>{r.description}</p>
                       </div>
                     </div>
-                    <div className='records-price p-2 m-3'>
-                      <div className='price'>
-                        <h2>Rs.{r.price}</h2>
-                      </div>
+                    <div className='records-price p-1 m-2'>
+
+                      <h2 className='m-0'>Rs.{r.price}/hour</h2>
+
                     </div>
                   </div>
                 </div>

@@ -129,7 +129,7 @@ header {
 .get-started-btn:hover {
     background-color: transparent;
     border: 2px solid var(--orange-ball);
-    color: var(--orange-ball);
+    color: var(--orange-ball) !important;
 }
 
 
@@ -494,7 +494,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    width: 80%;
+    width: 90%;
     /* border: 2px solid #FFD3B2; */
 }
 
@@ -513,8 +513,8 @@ footer {
     align-items: center;
     border-color: var(--orange-ball);
     background-color: var(--white);
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 4px;
     margin: 0;
 }
@@ -569,7 +569,7 @@ footer {
 }
 
 .name-p {
-    font-Size: 24px;
+    font-Size: 26px;
     font-Weight: 600;
     display: flex;
     align-items: center;
@@ -709,15 +709,25 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: antiquewhite;
     border-radius: 4px;
     width: 25%;
+}
+
+.records-price h2 {
+    font-size: 24px;
 }
 
 .talent-name {
     font-size: 20px;
 
 
+}
+
+.talent-name-p {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    font-weight: 600;
 }
 
 /* .talent-skill{
