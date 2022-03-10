@@ -149,7 +149,7 @@ const TalentProfile = () => {
                                 <div className='col'>
                                     <Rating onRatingClick={onRatingClickHandler} rating={record.averageRating} />
                                 </div>
-                                <div className='row talent-price mb-0 p-2'>
+                                <div className='row talent-price mb-0 ms-1 p-2'>
                                     <span className='price-p'>Rs.{record.price}/hour</span>
                                 </div>
 
@@ -158,12 +158,12 @@ const TalentProfile = () => {
 
                         </div>
                         <div
-                            className='row talent-description my-3 mx-0 p-2 ps-0'
-                        //  style={{ borderBottom: ' 2px solid #FFD3B2' }}
+                            className='row talent-description my-3 mx-0 p-4 mt-4 ps-3'
+                           style={{ borderBottom:'2px solid #756f6f  ' }}
                         >
                             <p
-                                className='mb-3'
-                                style={{ fontWeight: '600', fontSize: '18px' }}
+                                className='mb-3 mt-2'
+                                style={{ fontWeight: '600', fontSize: '18px'  }}
                             >
                                 Description
                             </p>
@@ -171,7 +171,7 @@ const TalentProfile = () => {
                         </div>
 
                         <div className='col p-0 d-flex flex-row'>
-                            <div className='row talent-projects mb-3  p-2 ps-0'>
+                            <div className='row talent-projects mb-3 mt-2 p-2 ps-3'>
                                 <p
                                     className='mb-3'
                                     style={{ fontWeight: '600', fontSize: '18px' }}
@@ -187,7 +187,7 @@ const TalentProfile = () => {
                                 })
                                 }
                             </div>
-                            <div className='row talent-skill  mb-3 ps-2 '>
+                            <div className='row talent-skill  mb-3 ps-3 mt-3 '>
                                 <p
                                     className='mb-4'
                                     style={{ fontWeight: '600', fontSize: '18px' }}
