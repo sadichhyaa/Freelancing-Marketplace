@@ -1,6 +1,7 @@
 import NavBar from '../components/NavBar';
 import Script from 'next/script';
 import Footer from '../components/Footer';
+import Rating from '../components/Rating';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import api from '../services/api';
@@ -90,7 +91,7 @@ const Profile = () => {
                     <span className='ms-2'>Available</span>
                   </div>
                   <div className='col'>
-                    {/* <Rating /> */}
+                    {/* <Rating rating={profile.averageRating}/> */}
                   </div>
                 </div>
                 <div

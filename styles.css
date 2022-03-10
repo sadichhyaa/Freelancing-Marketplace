@@ -97,7 +97,9 @@ header {
 .navbar ul li:nth-child(3) {
     margin-right: 489px;
 }
-
+#login_text:hover {
+    color: white !important;
+}
 
 
 /* #login_text:hover {

@@ -67,7 +67,7 @@ const NavBar = () => {
               </li>
               {profile ? (<div></div>) : <li className='nav-item dropdown me-5 '>
                 <a
-                  className='nav-link dropdown-toggle text-white'
+                  className='nav-link dropdown-toggle ' style= {{color:"var(--orange-ball)"}}
                   href='#'
                   id='login_text'
                   role='button'
