@@ -523,7 +523,7 @@ footer {
 .talent-name-box {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .talent-projects {
