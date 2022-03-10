@@ -24,6 +24,8 @@ const NavBar = () => {
   const logout = () => {
     document.cookie =
       'auth_token' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      document.cookie =
+      'talent' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';  
     alert('You have been logged out');
     location.reload(true);
     router.push('/');

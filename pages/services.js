@@ -162,8 +162,8 @@ const Services = () => {
                                     <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Artist
                                     </a>
                                     </Link>
-                                    <Link href="/talentRecords?servicesOffered=Tailor">
-                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Tailor
+                                    <Link href="/talentRecords?servicesOffered=Trainer">
+                                    <a className="border rounded-pill m-3 px-3 py-2 text-nowrap">Trainer
                                     </a>
                                     </Link>
                                     <Link href="/talentRecords?servicesOffered=Language%20Translator">
