@@ -159,7 +159,7 @@ const TalentProfile = () => {
                         </div>
                         <div
                             className='row talent-description my-3 mx-0 p-4 mt-4 ps-3'
-                           style={{ borderBottom:'2px solid #756f6f  ' }}
+                           style={{ borderBottom:'1px solid #756f6f  ' }}
                         >
                             <p
                                 className='mb-3 mt-2'
