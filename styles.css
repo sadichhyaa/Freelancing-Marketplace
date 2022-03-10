@@ -52,6 +52,7 @@ header {
     background: transparent;
     z-index: 1;
     transition: 0.5s ease;
+
 }
 
 /* .nav-item:hover {
@@ -79,6 +80,7 @@ header {
     margin-left: 106px;
     list-style-type: none;
     font-size: 16px;
+
 }
 
 .pages-link {
@@ -492,7 +494,7 @@ footer {
     justify-content: center;
     align-items: stretch;
     width: 80%;
-    border: 2px solid #FFD3B2;
+    /* border: 2px solid #FFD3B2; */
 }
 
 .profile-main {
@@ -509,19 +511,22 @@ footer {
     justify-content: center;
     align-items: center;
     border-color: var(--orange-ball);
-    border-radius: 4px;
     background-color: var(--white);
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    margin: 0;
 }
 
-.talent-image {
-    width: 250px;
-    height: 250px;
-    border: 2px solid #FFD3B2;
-    border-radius: 4px;
+
+.talent-name-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .talent-projects {
-    border: 2px solid #FFD3B2;
+    /* border: 2px solid var(--orange-ball); */
     border-radius: 4px;
     margin: 0 auto;
     width: 80%;
@@ -551,28 +556,51 @@ footer {
     justify-content: center;
 }
 
-.profile-col1 .row p,
+/* .profile-col1 .row p,
 .profile-col2 .row p,
 .record-box p {
 
     margin-bottom: 0;
+} */
+.profile-col1 {
+    width: 80%;
+    height: auto;
 }
 
-.name-p,
-.price-p {
+.name-p {
     font-Size: 24px;
     font-Weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    margin-bottom: 0;
 
 }
 
-.talent-description p,
+.talent-price {
+    background-color: var(--orange-ball);
+    border-radius: 4px;
+    width: 30%;
+
+
+}
+
+.price-p {
+    font-Size: 20px;
+    font-Weight: 600;
+    color: var(--white);
+}
+
+.talent-description p {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
 .talent-status .col {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .fa-star {
@@ -601,7 +629,9 @@ footer {
 .hire-btn-div,
 .hire-form label,
 .records-main,
-.records-header {
+.records-header,
+.talent-price,
+.price-p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -642,7 +672,7 @@ footer {
     border-radius: 4px;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     width: 100%;
 }
@@ -662,7 +692,7 @@ footer {
 
 .price-p {
     border-radius: 4px;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -678,8 +708,13 @@ footer {
 
 .talent-name {
     font-size: 20px;
-    font-weight: 600;
+
+
 }
+
+/* .talent-skill{
+    border:#04aa6d;
+} */
 
 .no-record {
     width: 80%;

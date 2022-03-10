@@ -116,6 +116,7 @@ const NavBar = () => {
                       Get Started
                     </a>
                   </Link>
+                  
                 )}
               </li>}
               
