@@ -7,13 +7,19 @@ import Cookies from 'js-cookie';
 
 const NavBar = () => {
   const [profile, setProfile] = useState(null);
-
+  const [token,setToken] = useState(null);
   useEffect(() => {
-      const token = Cookies.get("auth_token");
-      setProfile(token);
-  }, []);
+    const token = Cookies.get("auth_token");
+    const profile = JSON.parse(Cookies.get("talent"));
+    setToken(token);
+    setProfile(profile)
+    console.log(profile.profile.fullName);
 
+    
+  }, []);
+  
   const router = useRouter();
+
 
   const logout = () => {
     document.cookie =
@@ -65,7 +71,7 @@ const NavBar = () => {
                   About
                 </a>
               </li>
-              {profile ? (<div></div>) : <li className='nav-item dropdown me-5 '>
+              {token ? (<div></div>) : <li className='nav-item dropdown me-5 '>
                 <a
                   className='nav-link dropdown-toggle ' style= {{color:"var(--orange-ball)"}}
                   href='#'
@@ -95,17 +101,19 @@ const NavBar = () => {
                 </ul>
               </li>}
               
-              {profile ? <li className='nav-item pages-link'>
+              {token ? <li className='nav-item pages-link'>
                 <a className='nav-link' onClick={() => logout()}>
                   Logout
                 </a>
               </li> : <div></div>}
               
-              {profile ? <div></div> : <li className='nav-item'>
-                {profile ? (
-                  <Link href={'/profile'}>
-                    <a>{profile.fullName}</a>
+              {/* {token ? <div></div> : <li className='nav-item'> */}
+                {token ? (
+                  <li className='nav-item'>
+                  <Link href= '/profile'>
+                    <a>{profile.profile.fullName}</a>
                   </Link>
+                  </li>
                 ) : (
                   <Link href='/sign-up'>
                     <a
@@ -118,7 +126,7 @@ const NavBar = () => {
                   </Link>
                   
                 )}
-              </li>}
+              {/* </li>} */}
               
             </ul>
           </div>

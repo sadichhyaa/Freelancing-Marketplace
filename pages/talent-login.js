@@ -6,6 +6,8 @@ import NavBar from "../components/NavBar";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
+import api from "../services/api";
+
 
 const { yupResolver } = require("@hookform/resolvers/yup");
 
@@ -25,8 +27,24 @@ const TalentLogIn = () => {
 
     const { register, formState: { errors }, handleSubmit, setError } = useForm({ resolver: yupResolver(schema) });
     const [isLoading, setIsLoading] = useState(false);
+    const [ profile, setProfile] = useState(null);
+    const Profile = ()=>{
+        // console.log('hello');
+        return api.get('/profile/me').then(( {data} ) => {
+            // console.log(data);
+            if (data.profile) {
+              setProfile(data.profile);
+
+            } else {
+              router.push('/profile-form');
+            }
+            // console.log(data);
+            Cookies.set("talent", JSON.stringify(data));
+          });
+    }
 
     const onSubmit = (data) => {
+        // console.log(data);
         // console.log(data);
         setIsLoading(true);
 
@@ -35,6 +53,9 @@ const TalentLogIn = () => {
             .then(({ data }) => {
                 console.log(data.token);
                 Cookies.set("auth_token", data.token);
+                Profile();
+                
+
                 // router.push('/');
             }).catch((err) => {
                 if (err.response?.data && err.response?.data.error) {
