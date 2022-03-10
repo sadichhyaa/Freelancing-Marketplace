@@ -111,17 +111,20 @@ const TalentProfile = () => {
             <NavBar />
             <div className=' profile-main container mt-5'>
                 {record && (
-                    <div className=' row main-card shadow p-0'>
+                    <div className=' row main-card shadow p-5'>
                         <div
                             className='col p-0 d-flex justify-content-center align-items-center'>
-                            <div className='profile-col1 col  d-flex justify-content-center align-items-center'>
-                                <div className='row talent-image'>
+                            <div className='profile-col1 col  d-flex justify-content-center align-items-center mt-2' style={{ flexDirection: 'column' }}>
+                                <div className=' talent-image'>
                                     <img
-                                        style={{ width: '100%', height: '100%', padding: 'none' }}
+                                        style={{ width: '100%', height: '100%', padding: '0px', borderRadius: '4px' }}
                                         src={
                                             record.profilePicture ?? './images/user-placeholder.jpg'
                                         }
                                     ></img>
+                                </div>
+                                <div className='mt-2'>
+                                    <Rating onRatingClick={onRatingClickHandler} rating={record.averageRating} />
                                 </div>
 
                             </div>
@@ -130,25 +133,23 @@ const TalentProfile = () => {
                             <div className='profile-col2 col'>
 
                                 <div
-                                    className='row talent-status m-0 p-0'
+                                    className='talent-status p-0 mb-3'
                                 //  style={{ borderBottom: ' 2px solid #FFD3B2' }}
                                 >
                                     <div
-                                        className='col talent-name p-0 m-0'
+                                        className='talent-name column p-0 '
                                     //  style={{ borderBottom: ' 2px solid #FFD3B2' }}
                                     >
                                         <p className='name-p'>{record.fullName}</p>
                                     </div>
 
-                                    <div className='col'>
+                                    <div className='p-1 column ms-4'>
                                         <i className='fa fa-circle '></i>
                                         <span className=' p-2'>Available</span>
                                     </div>
 
                                 </div>
-                                <div className='col'>
-                                    <Rating onRatingClick={onRatingClickHandler} rating={record.averageRating} />
-                                </div>
+
                                 <div className='row talent-price mb-0 ms-1 p-2'>
                                     <span className='price-p'>Rs.{record.price}/hour</span>
                                 </div>
@@ -158,16 +159,16 @@ const TalentProfile = () => {
 
                         </div>
                         <div
-                            className='row talent-description my-3 mx-0 p-4 mt-4 ps-3'
-                           style={{ borderBottom:'2px solid #756f6f  ' }}
+                            className='row talent-description my-3 mx-4 mt-4 px-4'
+
                         >
                             <p
-                                className='mb-3 mt-2'
-                                style={{ fontWeight: '600', fontSize: '18px'  }}
+                                className='mb-3 mt-2 p-0'
+                                style={{ fontWeight: '600', fontSize: '18px' }}
                             >
                                 Description
                             </p>
-                            <p className='mb-3'>{record.description}</p>
+                            <p className='mb-3 pb-4 p-0' style={{ borderBottom: '1px solid #756f6f  ' }}>{record.description}</p>
                         </div>
 
                         <div className='col p-0 d-flex flex-row'>

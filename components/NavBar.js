@@ -73,7 +73,7 @@ const NavBar = () => {
               </li>
               {token ? (<div></div>) : <li className='nav-item dropdown me-5 '>
                 <a
-                  className='nav-link dropdown-toggle ' style= {{color:"var(--orange-ball)"}}
+                  className='nav-link dropdown-toggle ' style={{ color: "var(--orange-ball)" }}
                   href='#'
                   id='login_text'
                   role='button'
@@ -124,7 +124,7 @@ const NavBar = () => {
                       Get Started
                     </a>
                   </Link>
-                  
+
                 )}
               {/* </li>} */}
               

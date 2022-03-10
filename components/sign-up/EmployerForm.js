@@ -54,12 +54,6 @@ const EmployerForm = () => {
     return (
         <div className="row shadow" id="employer-div" style={{ width: "70%" }}>
             <div className="col-md-6 signup-form py-3">
-                <button className="mail m-4 border rounded d-flex align-items-center p-2" style={{ width: "80%" }}>
-                    <img className="loginicon d-flex ms-3" style={{ width: "8%" }} src="./images/mailicon.png" alt="" />
-                    <span
-                        style={{ marginLeft: "66px", fontWeight: "600", color: "var(--sad-grey)", letterSpacing: "0.02em" }}>Continue
-                        with mail</span>
-                </button>
                 <div className="border-0 m-3 d-flex justify-content-center align-items-center" style={{ width: "100%" }}>
                     <div className="line3"
                         style={{ width: "80%", height: "1px", backgroundColor: "var(--sad-grey)", opacity: "0.5" }}></div>

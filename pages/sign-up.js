@@ -11,7 +11,7 @@ const SignUp = () => {
     return (
         <>
             <NavBar />
-            <div className="container">
+            <div className="container mt-5">
                 <div className="main-btn-container d-flex justify-content-center align-items-center m-3">
                     <div className="button-container row" style={{ width: "70%" }}>
                         <div className="col md-6 d-flex justify-content-center align-items-center">
