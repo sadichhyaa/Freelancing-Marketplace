@@ -63,7 +63,7 @@ const NavBar = () => {
             <ul className='navbar-nav'>
               <li className='nav-item pages-link'>
                 <Link href='/'>
-                  <a className='nav-link active' aria-current='page'>
+                  <a className='nav-link active' aria-current='page' style={{color:'#756f6f'}}>
                     Home
                   </a>
                 </Link>
