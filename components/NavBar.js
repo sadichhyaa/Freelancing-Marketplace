@@ -118,9 +118,9 @@ const NavBar = () => {
               {/* {token ? <div></div> : <li className='nav-item'> */}
               {(token && profile) ? (
                   
-                <li className='nav-item'>
-                  <Link href='/profile'>
-                    <a>{profile.profile.fullName}</a>
+                <li className='nav-item-name' >
+                  <Link href='/profile'  >
+                    <a className='nav-bar-name'>{profile.profile.fullName}</a>
                   </Link>
                 </li>
               ) : (

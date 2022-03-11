@@ -98,6 +98,21 @@ header {
     margin-right: 489px;
 }
 
+.nav-bar-name{
+    text-decoration: none;
+    color: var(--orange-ball);
+    margin-left: 55px;
+
+}
+.nav-bar-name:hover{
+    color: var(--orange-ball);
+}
+.nav-item-name{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
 #login_text:hover {
     color: white !important;
 }
@@ -523,7 +538,7 @@ footer {
 .talent-name-box {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .talent-projects {
@@ -603,6 +618,7 @@ footer {
 .talent-status {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .talent-status .column {
