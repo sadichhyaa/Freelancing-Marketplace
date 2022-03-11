@@ -6,19 +6,25 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import api from '../services/api';
 import Link from 'next/link';
-
+import Cookies from 'js-cookie';
 const Profile = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     api.get('/profile/me').then(({ data }) => {
       console.log(data);
+      
       if (data.profile) {
         setProfile(data.profile);
+        Cookies.set("talent", JSON.stringify(data));
+
       } else {
         router.push('/profile-form');
       }
-    });
+
+    }).catch((err) => {err.response?.data && alert(err.response?.data.error)
+                       router.push('/')     
+    })
   }, []);
 
   const router = useRouter();

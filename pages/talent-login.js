@@ -39,6 +39,7 @@ const TalentLogIn = () => {
               router.push('/profile-form');
             }
             // console.log(data);
+            location.reload(true);
             Cookies.set("talent", JSON.stringify(data));
           });
     }
@@ -65,6 +66,7 @@ const TalentLogIn = () => {
                     });
                 }
                 console.log(err.response?.data);
+                alert('Invalis Credentials')
             }).finally(() => {
                 setIsLoading(false);
                 router.push('/')

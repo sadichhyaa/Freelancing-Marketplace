@@ -43,9 +43,11 @@ const EmployerLogIn = () => {
                     });
                 }
                 console.log(err.response?.data);
+                alert('Invalis Credentials')
             }).finally(() => {
                 setIsLoading(false);
                 router.push('/');
+                
             })
 
     };

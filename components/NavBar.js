@@ -10,12 +10,13 @@ const NavBar = () => {
   const [token, setToken] = useState(null);
   useEffect(() => {
     const token = Cookies.get("auth_token");
+    console.log(token);
     if (Cookies.get("talent")) {
       const profile = JSON.parse(Cookies.get("talent"));
-      setToken(token);
       setProfile(profile)
       console.log(profile.profile.fullName);
     }
+    setToken(token);
 
 
 
@@ -25,6 +26,7 @@ const NavBar = () => {
 
 
   const logout = () => {
+    console.log('hello');
     document.cookie =
       'auth_token' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
       document.cookie =
@@ -107,13 +109,15 @@ const NavBar = () => {
               </li>}
 
               {token ? <li className='nav-item pages-link'>
-                <a className='nav-link' onClick={() => logout()}>
+                <a className='nav-link'  onClick={() => logout()} >
+                  
                   Logout
                 </a>
               </li> : <div></div>}
 
               {/* {token ? <div></div> : <li className='nav-item'> */}
-              {token ? (
+              {(token && profile) ? (
+                  
                 <li className='nav-item'>
                   <Link href='/profile'>
                     <a>{profile.profile.fullName}</a>
@@ -126,6 +130,7 @@ const NavBar = () => {
                     className='d-flex justify-content-center align-items-center get-started-btn app-btn'
                     style={{ color: 'white' }}
                   >
+          
                     Get Started
                   </a>
                 </Link>
