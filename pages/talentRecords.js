@@ -73,7 +73,7 @@ const TalentRecords = (props) => {
                       <div
                         className='talent-name p-2'
                       >
-                        <p>{r.fullName}</p>
+                        <p className='talent-name-p' style={{ fontWeight: '600' }}>{r.fullName}</p>
                       </div>
                       <div className='record-description p-2'>
                         <p>{r.description}</p>

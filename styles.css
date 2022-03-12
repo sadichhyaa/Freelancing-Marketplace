@@ -523,7 +523,7 @@ footer {
 .talent-name-box {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
 }
 
 .talent-projects {
@@ -569,7 +569,7 @@ footer {
 }
 
 .name-p {
-    font-Size: 26px;
+    font-Size: 32px;
     font-Weight: 600;
     display: flex;
     align-items: center;

@@ -14,7 +14,6 @@ const NavBar = () => {
       const profile = JSON.parse(Cookies.get("talent"));
       setToken(token);
       setProfile(profile)
-      console.log(profile.profile.fullName);
     }
 
 

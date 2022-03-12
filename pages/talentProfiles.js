@@ -111,11 +111,11 @@ const TalentProfile = () => {
             <NavBar />
             <div className=' profile-main container mt-5'>
                 {record && (
-                    <div className=' row main-card shadow p-5'>
+                    <div className=' row main-card shadow p-5 pb-2'>
                         <div
                             className='col p-0 d-flex justify-content-center align-items-center'>
                             <div className='profile-col1 col  d-flex justify-content-center align-items-center mt-2' style={{ flexDirection: 'column' }}>
-                                <div className=' talent-image'>
+                                <div className=' talent-image shadow'>
                                     <img
                                         style={{ width: '100%', height: '100%', padding: '0px', borderRadius: '4px' }}
                                         src={
@@ -133,7 +133,7 @@ const TalentProfile = () => {
                             <div className='profile-col2 col'>
 
                                 <div
-                                    className='talent-status p-0 mb-3'
+                                    className='talent-status pb-3 mb-5' style={{ borderBottom: '1px solid rgb(117, 111, 111)' }}
                                 //  style={{ borderBottom: ' 2px solid #FFD3B2' }}
                                 >
                                     <div
@@ -143,7 +143,7 @@ const TalentProfile = () => {
                                         <p className='name-p'>{record.fullName}</p>
                                     </div>
 
-                                    <div className='p-1 column ms-4'>
+                                    <div className='p-0 column ms-4'>
                                         <i className='fa fa-circle '></i>
                                         <span className=' p-2'>Available</span>
                                     </div>
@@ -171,8 +171,8 @@ const TalentProfile = () => {
                             <p className='mb-3 pb-4 p-0' style={{ borderBottom: '1px solid #756f6f  ' }}>{record.description}</p>
                         </div>
 
-                        <div className='col p-0 d-flex flex-row'>
-                            <div className='row talent-projects mb-3 mt-2 p-2 ps-3'>
+                        <div className='row p-0 d-flex flex-row' style={{ borderBottom: '1px solid rgb(117, 111, 111)' }}>
+                            <div className='col talent-projects mb-3 mt-2 p-3'>
                                 <p
                                     className='mb-3'
                                     style={{ fontWeight: '600', fontSize: '18px' }}
@@ -181,16 +181,16 @@ const TalentProfile = () => {
                                 </p>
                                 {record.projectsDone?.map((p, i) => {
                                     return (
-                                        <p className='mb-0' key={`profile-project-${i}`}>
-                                            {p.project}
+                                        <p className='mb-3' key={`profile-project-${i}`}>
+                                            ● {p.project}
                                         </p>
                                     );
                                 })
                                 }
                             </div>
-                            <div className='row talent-skill  mb-3 ps-3 mt-3 '>
+                            <div className='col talent-skill  mb-3 p-3 mt-3 '>
                                 <p
-                                    className='mb-4'
+                                    className='mb-3'
                                     style={{ fontWeight: '600', fontSize: '18px' }}
                                 >
                                     Skills
@@ -198,7 +198,7 @@ const TalentProfile = () => {
                                 {record.listOfSkills?.map((p, i) => {
                                     return (
                                         <p className='' key={`profile-skills-${i}`}>
-                                            {p.skill}
+                                            ●{p.skill}
                                         </p>
                                     );
                                 })}
@@ -206,7 +206,7 @@ const TalentProfile = () => {
 
                         </div>
                         <div style={{ borderTop: ' 2 px solid #FFD3B2' }}>
-                            <div className='col profile-button p-3'>
+                            <div className='col profile-button p-3 m-2'>
                                 <a onClick={onClickHandler} className=' btn hire-btn px-5 '>
                                     Hire
                                 </a>
