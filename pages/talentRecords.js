@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import api from '../services/api';
 import axios from 'axios';
+import Rating from '../components/Rating';
 
 const TalentRecords = (props) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,8 @@ const TalentRecords = (props) => {
         setIsLoading(false);
       });
   };
+  
+
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -79,10 +82,15 @@ const TalentRecords = (props) => {
                         <p>{r.description}</p>
                       </div>
                     </div>
-                    <div className='records-price p-1 m-2'>
+                    <div  className='rating-record-talent' style={{display:'flex' , flexDirection:'column'}} >
+                     <div className='records-price p-1 m-2'>
 
                       <h2 className='m-0'>Rs.{r.price}/hour</h2>
 
+                     </div>
+                     <div className='mt-2'>
+                      <Rating  rating={r.averageRating} />
+                     </div>
                     </div>
                   </div>
                 </div>

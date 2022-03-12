@@ -56,7 +56,10 @@ const TalentProfile = () => {
             .then(({ data }) => {
                 alert(data.message);
             })
-            .catch((err) => err.response?.data && alert(err.response?.data.error))
+            .catch((err) =>{ 
+                // err.response?.data && alert(err.response?.data.error)
+            alert('Please login as Employer.')
+            })
             .finally(() => {
                 // router.push('/pages/talentProfiles');
                 onPageLoad();

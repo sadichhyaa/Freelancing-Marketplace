@@ -67,7 +67,9 @@ header {
     width: 100%;
     background-color: var(--body-color);
 }
-
+.rating-record-talent{
+    align-items: center;
+}
 .logo-dot {
     color: var(--orange-ball);
 }
