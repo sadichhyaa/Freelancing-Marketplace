@@ -85,6 +85,7 @@ const ProfileForm = () => {
         .then(({ data }) => {
           console.log(data);
           console.log(data.profilePicture);
+          
         })
         .catch((err) => err.response && alert(err.response?.data.error))
         .finally(() => {
