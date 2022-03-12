@@ -343,6 +343,7 @@ const ProfileForm = () => {
                   <option value='Event Manager'>Event Manager</option>
                   <option value='Security Guard'>Security Guard</option>
                   <option value='Driver'>Driver</option>
+                  <option value='Security Guard'>Trainer</option>
                 </select>
               </div>
               {errors.servicesOffered && (

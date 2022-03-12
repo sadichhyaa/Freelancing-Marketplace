@@ -15,7 +15,6 @@ const NavBar = () => {
     if (Cookies.get("talent")) {
       const profile = JSON.parse(Cookies.get("talent"));
       setProfile(profile)
-      console.log(profile.profile.fullName);
     }
     setToken(token);
 
@@ -30,8 +29,8 @@ const NavBar = () => {
     console.log('hello');
     document.cookie =
       'auth_token' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-      document.cookie =
-      'talent' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';  
+    document.cookie =
+      'talent' + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     alert('You have been logged out');
     location.reload(true);
     router.push('/');
@@ -64,7 +63,7 @@ const NavBar = () => {
             <ul className='navbar-nav'>
               <li className='nav-item pages-link'>
                 <Link href='/'>
-                  <a className='nav-link active' aria-current='page' style={{color:'#756f6f'}}>
+                  <a className='nav-link active' aria-current='page' style={{ color: '#756f6f' }}>
                     Home
                   </a>
                 </Link>
@@ -109,19 +108,12 @@ const NavBar = () => {
                 </ul>
               </li>}
 
-              {token ? <li className='nav-item pages-link'>
-                <a className='nav-link'  onClick={() => logout()} >
-                  
-                  Logout
-                </a>
-              </li> : <div></div>}
-
               {/* {token ? <div></div> : <li className='nav-item'> */}
               {(token && profile) ? (
-                  
-                <li className='nav-item-name' >
+
+                <li className='nav-item-pages-link' >
                   <Link href='/profile'  >
-                    <a className='nav-bar-name'>{profile.profile.fullName}</a>
+                    <a className='nav-link me-3' style={{ color: "var(--orange-ball)", textDecoration: 'none' }}>{profile.profile.fullName}</a>
                   </Link>
                 </li>
               ) : (
@@ -131,13 +123,25 @@ const NavBar = () => {
                     className='d-flex justify-content-center align-items-center get-started-btn app-btn'
                     style={{ color: 'white' }}
                   >
-          
+
                     Get Started
                   </a>
                 </Link>
 
               )}
               {/* </li>} */}
+
+              {token ? <li className='nav-item pages-link'>
+                <a type='button'
+                  className='nav-link d-flex justify-content-center align-items-center get-started-btn app-btn'
+                  style={{ color: 'white' }} onClick={() => logout()}
+                >
+
+                  Logout
+                </a>
+              </li> : <div></div>}
+
+
 
             </ul>
           </div>
