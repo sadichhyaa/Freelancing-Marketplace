@@ -8,7 +8,7 @@ const TalentFilter = () => {
 
     return (
         <>
-            <select className="filter-box" onChange={(e) => {
+            <select className="filter-box" style={{cursor:'pointer'}} onChange={(e) => {
                 router.push(e.target.value)
             }}>
                 <option value=''>Filter</option>

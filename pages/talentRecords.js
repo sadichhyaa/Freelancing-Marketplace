@@ -57,7 +57,7 @@ const TalentRecords = (props) => {
               <h2>{router.query.servicesOffered}</h2>
 
             </div>
-            <div className='col d-flex, justify-content-center align-items-center'>
+            <div className='col d-flex, justify-content-center align-items-center' >
               <TalentFilter />
             </div>
 
@@ -67,7 +67,7 @@ const TalentRecords = (props) => {
             {!isLoading &&
               records.length > 0 &&
               records.map((r, i) => (
-                <div className='records-main' key={`talent-${i}`}>
+                <div className='records-main' style={{cursor:'pointer'}} key={`talent-${i}`}>
                   <div className='records-box shadow p-2 mb-4' onClick={() => onClickHandler(r._id)}>
                     <div className='records-photo mx-3'>
                       <img src={r.profilePicture} />
